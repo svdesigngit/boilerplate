@@ -1,2 +1,7 @@
 # boilerplate_light
-Базовая сборка с Твигом
+Базовая сборка
+gulp
+webpack
+
+html шаблонизатор TWIG
+css препроцессор SCSS
