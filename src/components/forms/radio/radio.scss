@@ -1,0 +1,110 @@
+//Version - 1.1
+//Documentation - https://kelnik.gitbooks.io/kelnik-documentation/content/front-end/components/forms/checkbox-radio.html
+
+//Dependecies
+@import '../../../common/styles/mixins';
+@import '../../../common/styles/breakpoints';
+
+//Settings
+//Checkbox
+$radio-color-check: #2962ff;
+$radio-color-notcheck: #e4e5e4;
+$radio-color-mark: #fff;
+$radio-color-hover: #82b1ff;
+$radio-color-disable: $radio-color-notcheck;
+$radio-opacity-disable: .7;
+$radio-opacity-focus: .7;
+$radio-color-focus: 0;
+$radio-outline-focus: 0;
+
+//Text
+$radio-text-color-hover: #000000;
+$radio-text-color-disable: $radio-color-notcheck;
+$radio-text-opacity-disable: $radio-opacity-disable;
+$radio-text-opacity-hover: 1;
+$radio-text-decoration-hover: none;
+
+//Icon
+$radio-svg-width: 36px;
+$radio-svg-height: 36px;
+
+//Component
+.b-form__radio {
+    svg {
+        width: $radio-svg-width;
+        height: $radio-svg-height;
+    }
+}
+
+.b-form__radio-input {
+    //скрытие дефолтного инпута. Использование миксина обусловлено потребностью сохранения переключаемости TABом.
+    @include visually-hidden;
+}
+
+.b-form__radio-label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.b-form__radio-box {
+    @include transition(fill);
+    fill: $radio-color-notcheck;
+}
+
+.b-form__radio-mark {
+    @include transition(fill-opacity);
+    fill: $radio-color-mark;
+    fill-opacity: 0;
+}
+
+//Checked
+.b-form__radio-input:checked + .b-form__radio-label {
+    .b-form__radio-mark {
+        fill-opacity: 1;
+    }
+
+    .b-form__radio-box {
+        fill: $radio-color-check;
+    }
+}
+
+//Hover
+.b-form__radio:hover .b-form__radio-label {
+    @media #{$laptop} {
+        .b-form__radio-box {
+            fill: $radio-color-hover;
+        }
+
+        .b-form__radio-text {
+            @include transition(color, opacity);
+            color: $radio-text-color-hover;
+            opacity: $radio-text-opacity-hover;
+            text-decoration: $radio-text-decoration-hover;
+        }
+    }
+}
+
+//Focus
+.b-form__radio-input:focus + .b-form__radio-label .b-form__radio-box {
+    @media #{$laptop} {
+        fill-opacity: $radio-opacity-focus;
+        fill: $radio-color-focus;
+        outline: $radio-outline-focus;
+    }
+}
+
+//Disabled
+.b-form__radio-input:disabled + .b-form__radio-label {
+    cursor: default;
+
+    .b-form__radio-box {
+        fill: $radio-color-disable;
+        opacity: $radio-opacity-disable;
+    }
+
+    .b-form__radio-text {
+        color: $radio-text-color-disable;
+        opacity: $radio-text-opacity-disable;
+    }
+}

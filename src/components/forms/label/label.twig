@@ -1,0 +1,15 @@
+<label for="{{ id }}">
+    {{ text }}
+</label>
+
+{% if input.type == "text" %}
+    {% include '../input-text/input-text.twig' with input %}
+{% elseif input.type == "email" %}
+    {% include '../email/email.twig' with input %}
+{% elseif input.type == "number" %}
+    {% include '../number/number.twig' with input %}
+{% elseif input.type == "search" %}
+    {% include '../search/search.twig' with input %}
+{% elseif input.type == "phone" %}
+    {% include '../telephone/telephone.twig' with input %}
+{% endif %}

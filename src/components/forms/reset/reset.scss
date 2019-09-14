@@ -1,0 +1,58 @@
+//Version - 1.0
+//Documentation - https://kelnik.gitbooks.io/kelnik-documentation/content/front-end/components/forms/input-reset.html
+
+//Settings
+//Reset font color
+$reset-color: #ffffff;
+
+//Reset background color
+$reset-background-color: #e3e3e3;
+$reset-hover-background-color: #adabab;
+$reset-disable-background-color: #e0dede;
+
+//Reset border and outline color
+$reset-border-color: #e3e3e3;
+$reset-hover-border-color: #adabab;
+$reset-focus-border-color: #e0dede;
+$reset-disable-border-color: #e0dede;
+$reset-outline-color: #2196f3;
+
+//Reset size
+$reset-font-size: 16px;
+$reset-padding-top: 5px;
+$reset-padding-bottom: 5px;
+$reset-padding-left: 10px;
+$reset-padding-right: 10px;
+$reset-border-radius: 3px;
+$reset-border-width: 0;
+
+// Component
+.b-input-reset {
+    @include transition(all);
+    cursor: pointer;
+    font-size: $reset-font-size;
+    padding: $reset-padding-top $reset-padding-right $reset-padding-bottom $reset-padding-left;
+    color: $reset-color;
+    background-color: $reset-background-color;
+    border-radius: $reset-border-radius;
+    border-width: $reset-border-width;
+
+    //Hover
+    @media #{$laptop} {
+        &:hover {
+            background-color: $reset-hover-background-color;
+        }
+    }
+
+    //Focus
+    &:focus {
+        outline-color: $reset-outline-color;
+    }
+
+    //Disabled
+    &:disabled {
+        cursor: default;
+        pointer-events: none;
+        background-color: $reset-disable-background-color;
+    }
+}

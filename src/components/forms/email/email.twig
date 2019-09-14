@@ -1,0 +1,23 @@
+{% if id %}
+    <input
+        id="{{ id }}"
+        class="b-input-email {% if class %}{{ class }}{% endif %}"
+        type="email"
+        name="{{ name }}"
+        {% if value %}
+            value="{{ value }}"
+        {% endif %}
+
+        {% if placeholder %}
+            placeholder="{{ placeholder }}"
+        {% endif %}
+
+        {% if pattern %}
+            pattern="{{ pattern }}"
+        {% endif %}
+        {% if disabled %} disabled {% endif %}
+        {% if required %} required {% endif %}
+    >
+{% else %}
+    <h2 style="color: red">Пожалуйста, укажи уникальный id для инпута</h2>
+{% endif %}

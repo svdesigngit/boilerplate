@@ -1,0 +1,144 @@
+//Version - 1.1
+//Documentation - https://kelnik.gitbooks.io/kelnik-documentation/content/front-end/components/forms/checkbox-radio.html
+
+//Dependecies
+@import '../../../common/styles/mixins';
+@import '../../../common/styles/breakpoints';
+
+//Settings
+//Checkbox
+$checkbox-color-check: $white;
+$checkbox-color-notcheck: $white;
+$checkbox-color-mark: $black;
+$checkbox-color-hover: $white;
+$checkbox-color-disable: $checkbox-color-notcheck;
+$checkbox-opacity-disable: .7;
+$checkbox-color-focus: 0;
+$checkbox-opacity-focus: .7;
+$checkbox-outline-focus: 0;
+
+//Text
+$checkbox-text-color-hover: #000000;
+$checkbox-text-color-disable: $checkbox-color-notcheck;
+$checkbox-text-opacity-disable: $checkbox-opacity-disable;
+$checkbox-text-opacity-hover: 1;
+$checkbox-text-decoration-hover: none;
+
+//Icon
+$checkbox-svg-width: 18px;
+$checkbox-svg-height: 18px;
+
+//Component
+.b-checkbox {
+    svg {
+        @include transition(transform, fill-opacity);
+        width: 10px;
+        height: 8px;
+        transform: translateY(-12px);
+        fill: $checkbox-color-mark;
+        fill-opacity: 0;
+    }
+}
+
+.b-checkbox__input {
+    // Cкрытие дефолтного инпута. Использование миксина обусловлено потребностью сохранения переключаемости TABом.
+    @include visually-hidden;
+}
+
+.b-checkbox__label {
+    @include row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+
+.b-checkbox__text {
+    @include font-size(p2);
+    display: inline-block;
+    color: inherit;
+    padding-left: 15px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.b-checkbox__box {
+    @include transition(background-color, border);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: $checkbox-svg-width;
+    height: $checkbox-svg-height;
+    flex-basis: $checkbox-svg-height;
+    min-width: $checkbox-svg-height;
+    background-color: $checkbox-color-notcheck;
+    border: 1px solid rgba($black, .2);
+
+    // Из-за разницы размера шрифта в лейбле
+    @media #{$laptop} {
+        margin-top: 1px;
+    }
+}
+
+
+//Checked
+.b-checkbox__input:checked + .b-checkbox__label .b-checkbox__box {
+    background-color: $checkbox-color-check !important;
+
+    svg {
+        fill-opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+//Hover
+.b-checkbox__label:hover .b-checkbox__box {
+    @media #{$laptop} {
+        background-color: $checkbox-color-hover;
+        border: 1px solid rgba($black, .25);
+    }
+}
+
+//Focus
+//todo фокус!! везде для всех элементов формы
+//.b-form__checkbox-input:focus + .b-form__checkbox-label .b-form__checkbox-box {
+//    @media #{$laptop} {
+//        outline: $checkbox-outline-focus;
+//    }
+//}
+
+//Disabled
+.b-checkbox__input:disabled  + .b-checkbox__label {
+    opacity: .6;
+    cursor: default;
+    pointer-events: none;
+}
+
+.b-checkbox__input:disabled + .b-checkbox__label:hover .b-checkbox__box {
+    @media #{$laptop} {
+        opacity: .6;
+    }
+}
+
+//Theme
+//Чекбок в параметрическом фильтре
+.b-checkbox_theme_param {
+    .b-checkbox__text {
+        color: $white;
+    }
+
+    .b-checkbox__box {
+        background-color: rgba($white, .13);
+        border: 1px solid transparent;
+    }
+
+    .b-checkbox__input:checked + .b-checkbox__label .b-checkbox__box {
+        background-color: $brand-green !important;
+    }
+
+    .b-checkbox__label:hover .b-checkbox__box {
+        @media #{$laptop} {
+            background-color: rgba($white, .25);
+        }
+    }
+}

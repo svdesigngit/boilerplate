@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-size: $fontSize;
+    font-family: $fontFamily;
+    line-height: $lineHeight;
+    color: $colorFont;
+    background-color: $colorBackground;
+    min-width: 1280px;
+}
+
+h1 {
+    margin-bottom: vertical-indent(4);
+    line-height: 40px;
+    font-size: $fontSizeH1;
+    font-weight: $fontSemibold;
+    color: $colorFont;
+}
+
+h2 {
+    font-size: $fontSizeH2;
+    line-height: 32px;
+    font-weight: $fontSemibold;
+    color: $colorFont;
+}
+
+h3 {
+    font-size: $fontSizeH3;
+    line-height: 28px;
+    font-weight: $fontRegular;
+    color: $colorFont;
+}
+
+p {
+
+}
+
+.secondary-text {
+    font-size: $fontSizeSecondary;
+}
+
+a {
+    color: $colorLink;
+    text-decoration: none;
+
+    &:hover {
+        color: $colorLinkHover;
+        text-decoration: underline;
+    }
+}

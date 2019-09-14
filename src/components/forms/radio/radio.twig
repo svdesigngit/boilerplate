@@ -1,0 +1,20 @@
+{% if id %}
+    <div class="b-form__radio">
+        <input
+            id="{{ id }}"
+            class="b-form__radio-input"
+            type="radio"
+            value="{{ value }}"
+            name="{{ name }}"
+            {% if checked %} checked {% endif %}
+            {% if disabled %} disabled {% endif %}
+            {% if required %} required {% endif %}
+        >
+        <label for="{{ id }}" class="b-form__radio-label">
+            {% include 'radio.svg' %}
+            <span class="b-form__radio-text">{{ text }}</span>
+        </label>
+    </div>
+{% else %}
+    <p>Пожалуйста, укажи уникальный id для инпута</p>
+{% endif %}

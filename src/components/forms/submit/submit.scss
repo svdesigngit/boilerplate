@@ -1,0 +1,42 @@
+//Dependecies
+@import '../../../common/styles/mixins';
+@import '../../../common/styles/breakpoints';
+
+//Settings
+//Submit
+$submit-color: #2962ff;
+$submit-color-hover: #fff;
+$submit-color-disable: buttonface;
+$submit-opacity-disable: .7;
+$submit-color-focus: 0;
+$submit-opacity-focus: .7;
+$submit-outline-focus: #000;
+
+//Text
+$submit-text-color-hover: #000000;
+$submit-text-color-disable: graytext;
+$submit-text-opacity-disable: $submit-opacity-disable;
+$submit-text-opacity-hover: 1;
+$submit-text-decoration-hover: none;
+
+//Component
+.b-input-submit {
+    @media #{$laptop} {
+        &:hover {
+            cursor: pointer;
+            background-color: $submit-color-hover;
+            color: $submit-text-color-hover;
+        }
+    }
+
+    &:focus {
+        outline-color: $submit-outline-focus;
+    }
+
+    &:disabled {
+        cursor: default;
+        background-color: $submit-color-disable;
+        color: $submit-text-color-disable;
+    }
+}
+

@@ -1,0 +1,20 @@
+// стандартный transition
+@mixin transition($property) {
+    transition-property: $property;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+@mixin list-normalize {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin list-li-normalize {
+    li {
+        margin: 0;
+        padding: 0;
+        background: none;
+    }
+}

@@ -1,0 +1,54 @@
+// Settings
+$input-text-font-size: 16px;
+
+$input-text-padding-vertical: 10px;
+$input-text-padding-horizontal: 10px;
+
+$input-text-background-color: #e4e5e4;
+$input-text-disable-background-color: #a0a0a0;
+
+$input-text-border-color: #808080;
+$input-text-hover-border-color: #82b1ff;
+$input-text-focus-border-color: #82b1ff;
+
+$input-text-border-radius: 5px;
+
+$input-text-color: #000000;
+
+// Component
+.b-input-text {
+    @include transition(border-color);
+    font-size: $input-text-font-size;
+    padding-top: $input-text-padding-vertical;
+    padding-bottom: $input-text-padding-vertical;
+    padding-left: $input-text-padding-horizontal;
+    padding-right: $input-text-padding-horizontal;
+    background-color: $input-text-background-color;
+    border-style: solid;
+    border-width: 1px;
+    border-color: $input-text-border-color;
+    border-radius: $input-text-border-radius;
+    outline: 0;
+    color: $input-text-color;
+
+    &:focus {
+        border-color: $input-text-focus-border-color;
+    }
+
+    @media #{$laptop} {
+        &:hover {
+            border-color: $input-text-hover-border-color;
+        }
+    }
+}
+
+.b-input-text:disabled {
+    background-color: $input-text-disable-background-color;
+    cursor: default;
+
+    @media #{$laptop} {
+        &:hover {
+            border-color: $input-text-border-color;
+        }
+    }
+}

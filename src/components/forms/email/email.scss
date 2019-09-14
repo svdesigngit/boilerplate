@@ -1,0 +1,70 @@
+//Version - 1.0
+//Documentation - https://kelnik.gitbooks.io/kelnik-documentation/content/front-end/components/forms/input-email.html
+
+//Dependecies
+@import '../../../common/styles/mixins';
+@import '../../../common/styles/breakpoints';
+
+//Settings
+$input-font-size: 14px;
+$input-line-height: 1;
+$input-font-family: inherit;
+
+// Fields
+$input-color: #000000;
+$input-color-focus: #000000;
+$input-color-valid: #00ff00;
+$input-color-invalid: #ff0000;
+$input-color-disabled: #cccccc;
+
+//Background
+$input-bg-color: #ffffff;
+$input-bg-color-focus: rgba(#0000ff, .5);
+$input-bg-color-valid: rgba(#00ff00, .5);
+$input-bg-color-invalid: rgba(#ff0000, .5);
+$input-bg-color-disabled: rgba(#cccccc, .5);
+
+//Border
+$input-bd-width: 1px;
+$input-border-radius: 4px;
+$input-bd-color: #d4d4d4;
+$input-bd-color-focus: #ffffff;
+$input-bd-color-valid: #00ff00;
+$input-bd-color-invalid: #ff0000;
+$input-bd-color-disabled: #cccccc;
+
+//Placeholder
+$input-placeholder-color: rgba(#000000, .5);
+$input-placeholder-color-valid: #00ff00;
+$input-placeholder-color-invalid: #ff0000;
+$input-placeholder-color-disabled: #cccccc;
+$input-placeholder-font-style: normal;
+$input-placeholder-font-size: $input-font-size;
+$input-placeholder-opacity: 1;
+
+.b-input-email {
+    @include font-size('p2');
+    padding: 11px 40px 11px 11px;
+    color: $black;
+    border: 1px solid  rgba($black, .2);
+    width: 100%;
+    outline: none;
+    border-radius: 0;
+    box-shadow: none;
+    appearance: none;
+
+    // Отключаем стандартный крестик в полях в IE
+    &::-ms-clear {
+        display: none;
+    }
+
+    // Стили плейсходлера
+    &:focus ~ .b-callback__focus-line {
+        background-color: $brand-yellow;
+    }
+
+    &::placeholder {
+        @include font-size('p2');
+        color: rgba($black, .4);
+    }
+}

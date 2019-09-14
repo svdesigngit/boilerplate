@@ -1,0 +1,26 @@
+<form class="form{% if class %} {{ class }}{% endif %}" action="#">
+    {% for fieldList in fieldsGroup %}
+        <div class="form__field-group">
+            {% for field in fieldList.fields %}
+                {% include './form-field.twig' with {
+                    field: field
+                }%}
+            {% endfor %}
+        </div>
+    {% endfor %}
+    <div class="form__buttons">
+        {% for button in buttons %}
+            {% if button.type == 'default' %}
+                {% include '../buttons/button-default.twig' with {
+                    title: button.title,
+                    disabled: button.disabled
+                }%}
+            {% elseif button.type == 'pseudo' %}
+                {% include '../buttons/button-pseudo.twig' with {
+                    title: button.title,
+                    disabled: button.disabled
+                }%}
+            {% endif %}
+        {% endfor %}
+    </div>
+</form>

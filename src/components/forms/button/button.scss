@@ -1,0 +1,51 @@
+//Version - 1.0
+//Documentation - https://kelnik.gitbooks.io/kelnik-documentation/content/front-end/components/forms/input-button.html
+
+//Dependecies
+@import '../../../common/styles/mixins';
+@import '../../../common/styles/breakpoints';
+
+//Settings
+//input
+$input-main-color: #82b1ff;
+$input-main-color-hover: #2962ff;
+$input-main-color-focus: $input-main-color-hover;
+$input-color-disable: #777;
+$input-padding: 10px;
+
+//value input
+$input-value-color: #000;
+$input-value-color-hover: #fff;
+$input-value-color-focus: $input-value-color-hover;
+
+.b-input-button {
+    @include transition(all);
+    display: block;
+    padding: $input-padding;
+    border: 2px solid $input-main-color;
+    border-radius: 3px;
+    color: #000;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+
+    @media #{$laptop} {
+        &:hover {
+            border-color: $input-main-color-hover;
+            color: $input-value-color-hover;
+            background-color: $input-main-color-hover;
+        }
+    }
+
+    &:focus {
+        border-color: $input-main-color-focus;
+        color: $input-value-color-focus;
+        background-color: $input-main-color-focus;
+    }
+
+    &:disabled {
+        border-color: $input-color-disable;
+        color: $input-color-disable;
+        background-color: rgba($input-color-disable, .3);
+    }
+}

@@ -1,0 +1,31 @@
+//Version - 1.0
+//Documentation - https://kelnik.gitbooks.io/kelnik-documentation/content/front-end/components/forms/input-tel.html
+
+//Settings
+$input-border-color: #82b1ff;
+$input-border-color-hover: #2962ff;
+$input-border-color-focus: #2962ff;
+$input-color-disable: #777;
+$input-padding: 10px;
+
+//Component
+.b-input-telephone {
+    display: block;
+    padding: $input-padding;
+    border: 1px solid $input-border-color;
+    outline: none;
+
+    @media #{$laptop} {
+        &:hover {
+            border-bottom-color: $input-border-color-hover;
+        }
+    }
+
+    &:focus {
+        border-bottom-color: $input-border-color-hover;
+    }
+
+    &:disabled {
+        border-bottom-color: $input-color-disable;
+    }
+}

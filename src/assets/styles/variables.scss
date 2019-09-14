@@ -1,0 +1,42 @@
+/* COLORS */
+$gray:            			#ABABAB;
+$black:					    #000000;
+$blackLight:				rgba($black, 0.04);
+$hinted:				    rgba($black, 0.32);
+$white:					    #ffffff;
+
+$colorHideLight:			#4488FF;
+$colorHideLight2:			#3D7AE6;
+$colorHideLight3:			#69A0F6;
+
+$colorPanel:                #284159;
+
+$colorBackground:           #284159;
+
+$colorError:                #F15866;
+
+$colorBorder:               rgba($black, 0.16);
+
+$colorFont:				    rgba($black, 0.90);
+$colorFontInverted:		    rgba($white, 0.90);
+
+$colorLink:             	$colorHideLight;
+$colorLinkHover:      	    $colorHideLight;
+
+$cursorHover:				pointer;
+$cursorDisabled: 		    not-allowed;
+
+// FONTS
+$fontSize:					1.4rem;
+$fontSizeSecondary:			1.2rem;
+$fontSizeH1:                2.8rem;
+$fontSizeH2:                2rem;
+$fontSizeH3:                1.8rem;
+$fontFamily:				'Open Sans', sans-serif;
+$fontRegular:				400;
+$fontSemibold:				600;
+
+$lineHeight:				1.4em;
+
+// Базовый ветикальный ритм
+$rhythm:                    8px;

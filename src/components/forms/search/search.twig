@@ -1,0 +1,13 @@
+{% if id %}
+    <input
+        id="{{ id }}"
+        class="b-input-search"
+        type="search"
+        name="{{ name }}"
+        placeholder="{{ placeholder|default('Найти') }}"
+        {% if value %} value="{{ value }}" {% endif %}
+        {% if disabled %} disabled {% endif %}
+    >
+{% else %}
+    <p>Пожалуйста, укажи уникальный id для инпута</p>
+{% endif %}

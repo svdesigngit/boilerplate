@@ -1,0 +1,53 @@
+<div class="form-field {% if field.modify %} {{ field.modify }}{% endif %}{% if field.disabled %} form-field_disabled{% endif %}">
+    {% if field.type != 'checkbox' %}
+        <label for="{{ field.id }}" class="form-field__label">{{ field.label }}</label>
+    {% endif %}
+    {% if field.type == 'input' %}
+        <input id="{{ field.id }}"
+            {% if field.required == true %} required {% endif %}
+           type="text"
+           name="{{ field.name }}"
+           class="form-field__input"
+            {% if field.placeholder %}
+                placeholder="{{ field.placeholder }}"
+            {% endif %}
+            {% if field.disabled == true %} disabled {% endif %}
+            data-current-data="{{field.data}}"
+            value="{% if field.value %} {{ field.value }} {% endif %}"
+            {% if field.disabled %} disabled {% endif %}
+        >
+    {% elseif field.type == 'select' %}
+        <select id="{{ id }}"
+            {% if required == true %} required {% endif %}
+            name="{{ field.name }}"
+            class="form-field__select j-select"
+            data-current-data="{{ field.data }}"
+            {% if field.disabled %} disabled {% endif %}
+        >
+        {% for item in field.options %}
+            <option value="{{ item.value }}" {% if item.selected %} selected {% endif %}>
+                {{ item.header }}
+            </option>
+        {% endfor %}
+        </select>
+    {% elseif field.type == 'checkbox' %}
+        <input id="{{ field.id }}"
+                {% if field.required == true %} required {% endif %}
+               type="checkbox"
+               name="{{ field.name }}"
+               class="form-field__checkbox"
+                {% if field.disabled == true %} disabled {% endif %}
+                {% if field.checked == true %} checked {% endif %}
+               data-current-data="{{field.data}}"
+               value="{% if field.value %}{{ field.value }}{% endif %}"
+                {% if field.disabled %} disabled {% endif %}
+        >
+        <label for="{{ field.id }}" class="form-field__checkbox-label">
+            {{ field.label }}
+            {% if field.labelLinkText %}
+                <a class="form-field__checkbox-link" href="">{{ field.labelLinkText }}</a>
+            {% endif %}
+        </label>
+
+    {% endif %}
+</div>

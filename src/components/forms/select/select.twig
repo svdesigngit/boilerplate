@@ -1,0 +1,28 @@
+{% if id %}
+    <div class="b-select">
+        <div class="b-select__wrapper">
+            <select
+                id="{{ id }}"
+                class="b-select__list j-select"
+                name="{{ name }}"
+                data-placeholder="{{ placeholderText }}"
+                {% if required %} required {% endif %}
+                {% if multiple %} multiple {% endif %}
+                {% if disabled %} disabled {% endif %}
+            >
+                {% if placeholder %}<option></option> {% endif %}
+
+                {% for option in options %}
+                    <option value="{{ option.value }}"
+                            {% if option.disabled %} disabled {% endif %}
+                            {% if option.selected %} selected {% endif %}
+                    >
+                        {{ option.text }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+{% else %}
+    <h2 style="color: red">Пожалуйста, укажи уникальный id для селекта</h2>
+{% endif %}

@@ -1,7 +1,2 @@
-# boilerplate_light
-Базовая сборка
-gulp
-webpack
+# boilerplate
 
-html шаблонизатор TWIG
-css препроцессор SCSS

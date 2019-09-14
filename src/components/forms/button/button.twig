@@ -1,0 +1,10 @@
+{% if value %}
+    <input
+        class="b-input-button"
+        type="button"
+        value="{{ value }}"
+        {% if disabled %} disabled {% endif %}
+    >
+{% else %}
+    <h2 style="color: red">Пожалуйста, укажи value для инпута</h2>
+{% endif %}

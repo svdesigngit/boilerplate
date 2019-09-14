@@ -1,0 +1,123 @@
+//Version - 1.1
+//Documentation - https://kelnik.gitbooks.io/kelnik-documentation/content/front-end/components/forms/checkbox-radio.html
+
+//Dependecies
+@import '../../../common/styles/mixins';
+@import '../../../common/styles/breakpoints';
+
+//Settings
+//Colors
+$search-color-focus: #82b1ff;
+$search-color-border: $search-color-focus $search-color-focus $search-color-focus $search-color-focus;
+$search-color-border-hover: $search-color-border;
+$search-color-border-focus: $search-color-border;
+$search-color-invalid: #ec001b;
+$search-color-background: #ffffff;
+$search-color-background-hover: #ffffff;
+$search-color-background-focus: #ffffff;
+$search-color-text: #000000;
+$search-color-text-hover: #000000;
+$search-color-text-focus: #000000;
+$search-color-border-shadow: #000000;
+
+//Filters
+$search-filter: saturate(1);
+$search-filter-disabled: saturate(30%);
+
+//Opacity and visibility
+$search-opacity: 1;
+$search-opacity-hover: 1;
+$search-opacity-focus: $search-opacity-hover;
+$search-opacity-disabled: .5;
+$search-visibility: visible;
+
+//Text
+$search-font-family: 'Arial', serif;
+$search-font-size: 14px;
+$search-font-line-height: 16px;
+$search-font-letter-spacing: .3px;
+$search-font-weight: 400;
+$search-font-decoration: none;
+
+//Border params
+$search-border-width: 1px 1px 1px 1px;
+$search-border-style: solid;
+$search-border-radius: 15px 15px 15px 15px;
+$search-border-shadow: inset 0 0 0 $search-color-border-shadow;
+
+//Position and sizes
+$search-display: block;
+$search-position: relative;
+$search-float: none;
+$search-z-index: 1;
+$search-padding: 5px 10px;
+$search-width: 100px;
+$search-width-hover: 200px;
+$search-width-focus: $search-width-hover;
+$search-height: auto;
+
+//Animations
+$search-width-transition: width 1s ease;
+
+//Classic
+.b-input-search {
+    outline: none;
+    filter: $search-filter;
+    box-shadow: $search-border-shadow;
+    transition: $search-width-transition;
+    //set border
+    border-width: $search-border-width;
+    border-style: $search-border-style;
+    border-color: $search-color-border;
+    border-radius: $search-border-radius;
+    //set background
+    background-color: $search-color-background;
+    //set text
+    color: $search-color-text;
+    font-family: $search-font-family;
+    font-size: $search-font-size;
+    line-height: $search-font-line-height;
+    letter-spacing: $search-font-letter-spacing;
+    font-weight: $search-font-weight;
+    text-decoration: $search-font-decoration;
+    //set position
+    display: $search-display;
+    position: $search-position;
+    float: $search-float;
+    z-index: $search-z-index;
+    padding: $search-padding;
+    //set sizes
+    width: $search-width;
+    height: $search-height;
+    //Opacity and visibility
+    opacity: $search-opacity;
+    visibility: $search-visibility;
+}
+
+.b-input-search:focus {
+    opacity: $search-opacity-focus;
+    background-color: $search-color-background-focus;
+    color: $search-color-text-focus;
+    width: $search-width-focus;
+}
+
+//Hover
+.b-input-search:hover {
+    @media #{$laptop} {
+        opacity: $search-opacity-hover;
+        background-color: $search-color-background-hover;
+        color: $search-color-text-hover;
+        width: $search-width-hover;
+    }
+}
+
+//Disabled
+.b-input-search:disabled {
+    opacity: $search-opacity-disabled;
+    filter: $search-filter-disabled;
+}
+
+//Invalid
+.b-input-search:invalid {
+    border-color: $search-color-invalid;
+}

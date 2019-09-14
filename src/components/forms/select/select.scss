@@ -1,0 +1,333 @@
+//Version - 1.5
+//Documentation - https://kelnik.gitbooks.io/kelnik-documentation/content/front-end/components/forms/select.html
+
+//Dependencies
+@import '../../../common/styles/mixins';
+@import '../../../common/styles/breakpoints';
+
+/* stylelint-disable */
+//Settings
+//Select
+$select-font-size: 16px;
+$select-font-family: inherit;
+$select-height: auto;
+$select-padding: 11px;
+$select-brd-radius: 0;
+$select-brd-width: 1px;
+$select-brd-color: #d4d4d4;
+$select-bg-color: $white;
+$select-color: #000;
+$select-placeholder-color: $black;
+$select-shadow: none;
+
+//Options list
+$select-list-max-height: 240px;
+$select-list-padding: 11px;
+$select-list-bg-color: $white;
+$select-list-color: $black;
+$select-list-shadow: none;
+$select-list-hover-bg: rgba(76, 153, 243, .2);
+$select-list-hover-color: $black;
+
+//Arrow
+$select-arrow-width: 4px;
+$select-arrow-height: 7px;
+$select-arrow-color: #aaa;
+$select-arrow-custom: true;
+$select-arrow-image: '/images/icons/arrow-bottom-black.svg';
+$select-arrow-container-width: 10px;
+$select-arrow-right-padding: 11px;
+
+//States
+$select-disabled-opacity: .5 !important;
+$select-disabled-color: #ccc;
+$select-active-bg-image: none;
+$select-hover-brd-color: rgba($black, .2);
+
+//Multiselect
+$select-multi-brd-radius: 0;
+$select-multi-brd-width: 1px;
+$select-multi-brd-color: rgba($black, .2);
+$select-multi-bg-color: $white;
+$select-multi-color: #000;
+$select-multi-shadow: none;
+$select-multi-padding: 1px 20px 1px 5px;
+$select-multi-margin: 4px 5px 0 0;
+$select-multi-chosen-color: #ccc;
+$select-multi-chosen-bg: #f6f8f8;
+$select-multi-chosen-cursor: true;
+$select-multi-cross-position: 2px;
+$select-multi-results-underline: true;
+$select-multi-results-color: inherit;
+$select-multi-results-bg: transparent;
+
+//Component
+.b-select {
+    .chosen-container {
+        @include font-size('p2');
+
+        // Состояния для закрытого селекта
+        &:focus {
+            outline: none;
+        }
+        // Ховер для закрытого селекта
+        @media #{$laptop} {
+            &:hover {
+                .chosen-single {
+                    //border-color: $select-hover-brd-color;
+                }
+            }
+        }
+        // Фокус для закрытого селекта
+        &.chosen-container-active {
+            .chosen-single {
+                box-shadow: $select-multi-shadow;
+            }
+        }
+
+        // Опции в выпадающем списке селекта
+        .chosen-results {
+            margin: 0;
+            padding: 0;
+            max-height: $select-list-max-height;
+            background-color: $select-list-bg-color;
+            color: $select-list-color;
+
+            li {
+                padding: $select-list-padding;
+            }
+
+            // Задизайбленная опция в списке
+            li.disabled-result {
+                color: $select-disabled-color;
+            }
+
+            // Ховер опции в списке
+            li.highlighted {
+                background-image: none;
+                background-color: $select-list-hover-bg;
+                color: $select-list-hover-color;
+            }
+
+            // Подчеркивание найденной фразы при поиске
+            li em {
+                @if ($select-multi-results-underline) {
+                    text-decoration: underline;
+                } @else {
+                    text-decoration: none;
+                }
+                color: $select-multi-results-color;
+                background-color: $select-multi-results-bg;
+            }
+        }
+
+        // Выпадающий список селекта
+        .chosen-drop {
+            box-shadow: $select-list-shadow;
+            border-width: $select-brd-width;
+            border-color: $select-brd-color;
+            border-style: solid;
+            font-family: $select-font-family;
+        }
+    }
+
+    .chosen-container-single {
+        // Внешний вид закрытого селекта
+        .chosen-single {
+            @include transition(border-color);
+            height: $select-height;
+            line-height: $select-height - 1px;
+            box-shadow: $select-shadow;
+            background-image: none;
+            background-color: $select-bg-color;
+            padding: $select-padding;
+            border-radius: $select-brd-radius;
+            border-width: $select-brd-width;
+            border-color: $select-brd-color;
+            border-style: solid;
+            font-family: $select-font-family;
+
+            // Стрелочка справа у селекта
+            div b {
+                @include transition(transform);
+                background-image: url($select-arrow-image);
+                background-position: 0 50%;
+                background-repeat: no-repeat;
+                background-color: transparent;
+                background-size: contain !important;
+            }
+
+            span {
+                color: $select-color;
+            }
+
+            // Враппер для стрелочки справа у селекта
+            div {
+                width: $select-arrow-container-width;
+
+                @if ($select-arrow-custom) {
+                    right: $select-arrow-right-padding;
+                }
+            }
+        }
+
+        // Плейсхолдер для закрытого селекта
+        .chosen-default {
+            span {
+                color: $select-placeholder-color;
+            }
+        }
+
+        .chosen-drop {
+            border-bottom-right-radius: $select-brd-radius;
+            border-bottom-left-radius: $select-brd-radius;
+        }
+    }
+
+    // Задизейбленный закрытый селект
+    .chosen-disabled {
+        opacity: $select-disabled-opacity;
+    }
+
+    // Открытый селект с одним вариантом
+    .chosen-container-active.chosen-with-drop .chosen-single {
+        background-image: $select-active-bg-image;
+        box-shadow: none;
+        border-width: $select-brd-width;
+        border-color: $select-brd-color;
+        border-style: solid;
+        border-bottom-width: 1px;
+
+        // Стрелочка у открытого селекта
+        div b {
+            transform: rotate(180deg);
+            background-position: 0 50%;
+        }
+    }
+
+    // Мультиселект
+    .chosen-container-multi {
+        position: relative;
+
+        // Стрелочка справа для мультиселекта
+        &:after {
+            @include transition(transform);
+            content: '';
+            position: absolute;
+            right: $select-arrow-right-padding;
+            background-color: red;
+            z-index: 999;
+
+            @if ($select-arrow-custom) {
+                top: 0;
+                height: 100%;
+                background-image: url($select-arrow-image);
+                background-position: 0 50%;
+                background-repeat: no-repeat;
+                background-color: transparent;
+                background-size: contain;
+                width: $select-arrow-container-width;
+            } @else {
+                top: 45%;
+                width: 0;
+                height: 0;
+                background: none;
+                border-left: $select-arrow-width solid transparent;
+                border-right: $select-arrow-width solid transparent;
+                border-top: $select-arrow-height solid $select-arrow-color;
+            }
+        }
+
+        // Выпадающий список у мультиселекта
+        .chosen-choices {
+            background-image: none;
+            outline: none;
+            height: $select-height;
+            padding: $select-padding;
+
+            // Инпут для поиска вариантов
+            li.search-field input[type=text] {
+                @include font-size('p2');
+                font-family: inherit;
+            }
+
+            // Опция в мультиселекте
+            li.search-choice {
+                @include font-size('p2');
+                background-image: none;
+                box-shadow: none;
+                background-color: $select-multi-bg-color;
+                color: $select-multi-color;
+                border: $select-multi-brd-width solid $select-multi-brd-color;
+                border-radius: $select-multi-brd-radius;
+                margin: $select-multi-margin;
+                padding: $select-multi-padding;
+
+                .search-choice-close {
+                    top: $select-multi-cross-position;
+                }
+            }
+        }
+
+        // Активное состояние для стрелочки мультиселекта
+        &.chosen-container-active:after {
+            transform: rotate(180deg);
+        }
+
+        // Выбранное состояние опций мультиселекта
+        .chosen-drop .result-selected {
+            color: $select-multi-chosen-color;
+            background-color: $select-multi-chosen-bg;
+
+            @if ($select-multi-chosen-cursor) {
+                cursor: pointer;
+            }
+        }
+    }
+
+    // Активное состояние закрытого мультиселекта
+    .chosen-container-active .chosen-choices {
+        border-color: $select-brd-color;
+        box-shadow: $select-multi-shadow;
+    }
+}
+
+// Враппер для мобильного вида селекта
+.b-select__wrapper {
+    position: relative;
+
+    // Стрелочка справа у мобильного селекта
+    &:before {
+        content: '';
+        position: absolute;
+        right: $select-arrow-right-padding;
+        background-image: url($select-arrow-image);
+        background-position: 0 50%;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        background-size: contain !important;
+        width: $select-arrow-container-width;
+        height: 100%;
+        top: 0;
+    }
+}
+
+// Выпадающий список для мобильного вида селекта
+.b-select__list {
+    @include font-size('p2');
+    height: $select-height;
+    line-height: $select-height - 1px;
+    box-shadow: $select-shadow;
+    background-image: none;
+    background-color: $select-bg-color;
+    padding: 12px $select-padding;
+    border-radius: $select-brd-radius;
+    border-width: $select-brd-width;
+    border-color: $select-brd-color;
+    border-style: solid;
+    width: 100%;
+    font-family: $select-font-family;
+    outline: none;
+    appearance: none;
+}
+/* stylelint-enable */

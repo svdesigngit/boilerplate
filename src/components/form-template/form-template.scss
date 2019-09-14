@@ -1,0 +1,211 @@
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 75%;
+    margin-bottom: vertical-indent(8);
+}
+
+.form__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-basis: 100%;
+    flex-grow: 1;
+    justify-content: flex-start;
+}
+
+.form__field-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    flex-basis: 48%;
+    width: 48%;
+}
+
+.form-field {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: vertical-indent(3);
+    flex-grow: 1;
+    flex-basis: 100%;
+    width: 100%;
+}
+
+.form-field__label {
+    flex-basis: 100%;
+    width: 100%;
+    flex-grow: 1;
+    padding: 2px 0;
+    font-size: $fontSizeSecondary;
+    line-height: 1.7em;
+    color: $colorFont;
+}
+
+.form-field__input {
+    flex-basis: 100%;
+    width: 100%;
+    flex-grow: 1;
+    padding: 5px 10px;
+    border: 1px solid $hinted;
+    border-radius: 2px;
+    font-size: $fontSize;
+    color: $colorFont;
+
+    &:focus {
+        border-color: $colorHideLight;
+        outline: none;
+    }
+}
+
+.form-field__select {
+    flex-basis: 100%;
+    width: 100%;
+    flex-grow: 1;
+    padding: 5px 10px;
+    border: 1px solid $hinted;
+    border-radius: 2px;
+    font-size: $fontSize;
+    color: $colorFont;
+
+    &:focus {
+        border-color: $colorHideLight;
+        outline: none;
+    }
+}
+
+.form-field__checkbox {
+    vertical-align: top;
+    margin: 0;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    opacity: 0;
+
+    & + label {
+        position: relative;
+        display: block;
+        cursor: pointer;
+        font-size: $fontSize;
+        color: $colorFont;
+        padding: 0 0 0 35px;
+
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+
+            @include transition(all);
+        }
+
+        &:before {
+            top: 0;
+            left: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 3px;
+            border: 1px solid $gray;
+        }
+
+        &:after {
+            top: -4px;
+            left: 8px;
+            width: 6px;
+            height: 15px;
+            box-shadow: -3px -2px 0 #FFF inset, 3px -2px 0 #FFF;
+            border-bottom: 3px solid $colorHideLight;
+            border-right: 3px solid $colorHideLight;
+            transform: rotate(45deg);
+        }
+    }
+
+    &:hover + label:before,
+    &:hover + label:after {
+        border-color: $colorHideLight3;
+    }
+
+    &:focus + label:before,
+    &:focus + label:after {
+        border-color: $colorHideLight2;
+    }
+
+    &:not(checked) + label:after {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    &:checked + label:after {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.form-field__checkbox-label {
+    color: #999;
+    line-height: 1.2em;
+}
+
+.form-field__checkbox-label a {
+    display: inline-block;
+    padding: vertical-indent(1) 0;
+    color: $colorHideLight;
+    text-decoration: none;
+}
+
+// Ошибки
+
+.form-field_error {
+    .form-field__label {
+        color: $colorError;
+    }
+
+    .form-field__input {
+        border-color: $colorError;
+    }
+
+    .form-field__select {
+        border-color: $colorError;
+    }
+
+    .selectric {
+        border-color: $colorError;
+    }
+
+    .form-field__checkbox {
+        & + label {
+            color: $colorError;
+
+            &:before,
+            &:after {
+                border-color: $colorError;
+            }
+        }
+    }
+
+}
+// Disabled
+.form-field_disabled {
+    .form-field__label {
+        color: $hinted;
+    }
+
+    .form-field__input {
+        border-color: $hinted;
+    }
+
+    .form-field__select {
+        border-color: $hinted;
+    }
+
+    .form-field__checkbox {
+        & + label {
+            color: $hinted;
+
+            &:before,
+            &:after {
+                border-color: $hinted;
+            }
+        }
+    }
+}

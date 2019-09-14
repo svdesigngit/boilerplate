@@ -1,0 +1,20 @@
+{% if id %}
+    <input
+        id="{{ id }}"
+        class="b-input-text"
+        type="text"
+        name="{{ name }}"
+        maxlength="{{ maxlength }}"
+        autocomplete="{{ autocomplete }}"
+        value="{{ value }}"
+        placeholder="{{ placeholder }}"
+        {% if disabled %} disabled {% endif %}
+        {% if required %} required {% endif %}
+        {% if readonly %} readonly {% endif %}
+        {% if pattern %} pattern="{{ pattern }}" {% endif %}
+        {% if autocapitalize %} autocapitalize="{{ autocapitalize }}" {% endif %}
+    >
+
+{% else %}
+    <h2 style="color: red">Пожалуйста, укажи уникальный id для инпута</h2>
+{% endif %}

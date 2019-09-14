@@ -1,0 +1,16 @@
+{% if id %}
+    <input
+        id="{{ id }}"
+        class="b-input-number"
+        type="number"
+        value="{{ value }}"
+        name="{{ name }}"
+        {% if step %} step="{{ step }}" {% endif %}
+        {% if min %} min="{{ min }}" {% endif %}
+        {% if max %} max="{{ max }}"{% endif %}
+        {% if disabled %} disabled {% endif %}
+        {% if required %} required {% endif %}
+    >
+{% else %}
+    <h2 color="red">Пожалуйста, укажи уникальный id для инпута</h2>
+{% endif %}

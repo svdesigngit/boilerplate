@@ -1,0 +1,15 @@
+{% if id %}
+    <input
+            id="{{ id }}"
+            class="b-input-telephone"
+            type="tel"
+            name="phone"
+            autocomplete="tel"
+            placeholder="{{ placeholder|default("+7(___) ___-__-__") }}"
+            {% if value %} value="{{ value }}" {% endif %}
+            {% if disabled %} disabled {% endif %}
+            {% if required %} required {% endif %}
+    >
+{% else %}
+    <h2 style="color: red">Пожалуйста, укажи уникальный id для инпута</h2>
+{% endif %}
