@@ -36,32 +36,32 @@ const serve = cb => {
     'change',
     series(img, browserSync.reload)
   );
-  
+
   watch(config.img.input).on(
     'add',
     series(img, browserSync.reload)
   );
-  
+
   watch(config.video.input).on(
     'change',
     series(video, browserSync.reload)
   );
-  
+
   watch(config.video.input).on(
     'add',
     series(video, browserSync.reload)
   );
-  
+
   watch(config.fonts.input).on(
     'change',
     series(fonts, browserSync.reload)
   );
-  
+
   watch(config.fonts.input).on(
     'add',
     series(fonts, browserSync.reload)
   );
-  
+
   cb();
 };
 

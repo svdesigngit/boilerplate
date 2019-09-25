@@ -23,8 +23,6 @@ const scss = cb => {
     // }),
     objectFitImages()
   ];
-  
-  console.log(config.styles.input);
 
   src(config.styles.input)
     .pipe(plumber(config.notify))

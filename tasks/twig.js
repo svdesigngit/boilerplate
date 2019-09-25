@@ -23,6 +23,7 @@ const compileTwig = cb => {
     .pipe(plumber(config.notify))
     .pipe(twig())
     .pipe(gulpif(isDev, prettyHtml(prettyHtmlConfig)))
+    .pipe(dest(config.pages.temp))
     .pipe(dest(config.pages.output))
     .pipe(reload({ stream: true }));
 
