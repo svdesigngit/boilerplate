@@ -12,7 +12,7 @@ const { video } = require('./video');
 const serve = cb => {
   browserSync.init({
     server: config.output,
-    startPath: 'pages/index.html',
+    startPath: 'index.html',
     open: false,
     port: 8081
   });

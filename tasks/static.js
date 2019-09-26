@@ -6,8 +6,6 @@ const config = require('./config');
 // https://www.npmjs.com/package/gulp-filenames
 
 const static = cb => {
-  console.log(src(config.static.input, { read: true }));
-
   src(config.static.input, { read: false })
     .pipe(plumber(config.notify))
     .pipe(dest(config.static.output));
