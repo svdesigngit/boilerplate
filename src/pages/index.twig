@@ -58,19 +58,16 @@
     <br>
     <br>
     <br>
-    {{ title }}
-    <br>
-    {{ benefits }}
     <br>
     <br>
-    {{ customFunction([
-      'Fast',
-      'Flexible',
-      'Secure'
-    ]) }}
+    {% set data = load('test') %}
+    {{ dump(data) }}
+    {{ dump(data) }}
     <br>
+    {{ data.title }}
     <br>
-    {{ 'nameOfFilter' | customFilter(true) }}
+    {{ dump(data.title) }}
+    {# {{ 'nameOfFilter' | customFilter(true) }} #}
     <br>
     <br>
 
