@@ -1,11 +1,11 @@
-{# {% include './layout/head.twig' with {
-    title: 'Страница не найдена 404',
-    meta_d: '404',
-    theme_color: '#FFFFFF'
-}%} #}
+{% extends '../assets/layout/base.twig' %}
 
+{% block body %}
 
-<h1>404</h1>
+  {% set title = '404' %}
+  {% set meta_d = 'Описание' %}
+  {% set theme_color = '#FFFFFF' %}
 
+  <h1>404</h1>
 
-{# {% include './layout/footer.twig' %} #}
+{% endblock %}

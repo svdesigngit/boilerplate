@@ -93,7 +93,8 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-
+// import numberFormater from 'utils/numberFormater';
+// numberFormater();
 
 /***/ })
 

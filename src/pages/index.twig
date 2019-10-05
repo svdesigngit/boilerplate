@@ -61,7 +61,8 @@
     <br>
     <br>
     {% set data = load('test') %}
-    {{ dump(data) }}
+    {{  data.benefits['user']['name'] }}
+    {{ dump(data.title) }}
     {{ dump(data) }}
     <br>
     {{ data.title }}

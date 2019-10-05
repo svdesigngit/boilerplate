@@ -1,7 +1,6 @@
 const { errorHandler } = require('errorhandler');
 const notify = require('gulp-notify');
 const resolve = require('path').resolve;
-const source = resolve(__dirname, '../src');
 const build = resolve(__dirname, '../build');
 
 module.exports = {
@@ -20,12 +19,20 @@ module.exports = {
   },
   scripts: {
     input: resolve(__dirname, '../src/assets/scripts/app.js'),
-    watch: [`src/assets/**/*.js`, `src/blocks/**/*.js`],
+    watch: [
+      `src/assets/**/*.js`,
+      `src/blocks/**/*.js`,
+      `src/components/**/*.js`
+    ],
     output: resolve(__dirname, '../build/scripts')
   },
   styles: {
     input: `src/assets/styles/app.scss`,
-    watch: [`src/assets/**/*.scss`, `src/blocks/**/*.scss`],
+    watch: [
+      `src/assets/**/*.scss`,
+      `src/blocks/**/*.scss`,
+      `src/components/**/*.scss`
+    ],
     output: `build/css`
   },
   pages: {

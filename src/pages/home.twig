@@ -1,9 +1,24 @@
-{% extends 'layout/base.twig' %}
+{% extends '../assets/layout/base.twig' %}
 
 {% block body %}
-{% set title = 'Главная' %}
-{% set meta_d = 'Описание' %}
-{% set theme_color = '#FFFFFF' %}
 
-<h1>Привет, я новый сайт, сверстай меня скорей =)</h1>
+
+  {% set title = 'Главная - home' %}
+  {% set meta_d = 'Описание' %}
+  {% set theme_color = '#FFFFFF' %}
+  {% set data = load('test') %}
+
+  <h1>Привет, я новый сайт, сверстай меня скорей =)</h1>
+
+
+
+  {{  data.benefits['user']['name'] }}
+
+
+
+
+{% endblock %}
+
+{% block script %}
+jhgjhdsgfjhsdgf
 {% endblock %}
