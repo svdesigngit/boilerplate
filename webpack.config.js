@@ -1,4 +1,3 @@
-const path = require('path');
 const config = require('./tasks/config');
 
 module.exports = {
