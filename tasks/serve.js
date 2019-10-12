@@ -8,6 +8,8 @@ const { javascript } = require('./javascript');
 const { img } = require('./img');
 const { fonts } = require('./fonts');
 const { video } = require('./video');
+const { svgsprite } = require('./svgsprite');
+const { svgspritehtml } = require('./svgspritehtml');
 
 const serve = cb => {
   browserSync.init({
@@ -61,6 +63,17 @@ const serve = cb => {
     'add',
     series(fonts, browserSync.reload)
   );
+  
+  watch(config.svgsprite.input).on(
+    'change',
+    series(svgsprite, svgspritehtml, browserSync.reload)
+  );
+  
+  watch(config.svgsprite.input).on(
+    'add',
+    series(svgsprite, svgspritehtml, browserSync.reload)
+  );
+  
 
   cb();
 };

@@ -43,18 +43,18 @@ module.exports = {
       `src/components/**/*.twig`,
     ],
     temp: `temp`,
-    output: `build`
+    output: `build/`
   },
   fonts: {
     input: `src/fonts/**/*.{ttf,eot,svg,woff,woff2}`,
-    output: `build/fonts`
+    output: `build/fonts/`
   },
   favicons: {
     input: `src/favicons/*.{ico,png,svg}`,
-    output: `build/favicons`
+    output: `build/favicons/`
   },
   img: {
-    input: `src/img/**/*.{jpg,png,jpeg,webp}`,
+    input: `src/img/**/*.{jpg,png,jpeg,webp,svg}`,
     output: `build/img/`
   },
   video: {
@@ -63,11 +63,19 @@ module.exports = {
   },
   svg: {
     input: `src/components/**/*.svg`,
-    output: `build/icons`
+    output: `build/icons/`
+  },
+  svgsprite: {
+    input: `src/img/sprite/svg/*.svg`,
+    output: `build/img/sprite/`,
+    viewhtml: `build/`,
+    watch: [
+      `src/img/sprite/svg/*.svg`,
+    ]
   },
   static: {
     input: `src/static/**/*.*`,
-    output: `build`
+    output: `build/`
   },
   NODE_ENV: process.env.NODE_ENV || 'development', // or production
   isProduction: this.NODE_ENV === 'production'

@@ -3,6 +3,8 @@ const { series, parallel } = require('gulp');
 const { clean } = require('./tasks/clean');
 
 const { scss } = require('./tasks/scss');
+const { svgsprite } = require('./tasks/svgsprite');
+const { svgspritehtml } = require('./tasks/svgspritehtml');
 const { twig } = require('./tasks/twig');
 const { javascript } = require('./tasks/javascript');
 const { img } = require('./tasks/img');
@@ -22,10 +24,12 @@ if (isDev) {
       fonts,
       twig,
       scss,
+      svgsprite,
       javascript,
-      video,
+      video
     ),
     static,
+    svgspritehtml,
     // injects,
     serve
   );
@@ -36,9 +40,13 @@ if (isDev) {
       img,
       fonts,
       twig,
+      svgsprite,
       javascript,
       video,
       scss
-    )
+    ),
+    static,
+    svgspritehtml
+    // injects,
   );
 }
