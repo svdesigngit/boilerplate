@@ -21,7 +21,7 @@ indent_size = 2
 indent_style = space
 
 # 4 space indentation
-[*.py]
+[*.{py,html,twig}]
 indent_style = space
 indent_size = 4
 

@@ -21,9 +21,10 @@ module.exports = {
 		]
 	},
   resolve: {
+    extensions: ['.js', '.json'],
     alias: {
-      utils: path.resolve(__dirname, 'src/assets/script/utils/'),
-      // Templates: path.resolve(__dirname, 'src/templates/')
+      '@': path.resolve(__dirname, 'src'),
+      '@utils': path.resolve(__dirname, 'src/assets/scripts/utils/'),
     }
   },
 	devServer: {

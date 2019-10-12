@@ -60,7 +60,4 @@ typings/
 
 # dist files
 dist
-
-# temp files
-temp
-
+build
