@@ -1,3 +1,3 @@
-// import numberFormater from 'utils/numberFormater';
+import numberFormater from '@utils/numberFormater.js';
 
-// numberFormater();
+numberFormater();
