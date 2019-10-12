@@ -1,11 +1,24 @@
-{% include './layout/head.twig' with {
-    title: 'Главная',
-    meta_d: 'Описание',
-    theme_color: '#FFFFFF'
-}%}
+{% extends '../assets/layout/base.twig' %}
+
+{% block body %}
 
 
-<h1>Привет, я новый сайт, сверстай меня скорей =)</h1>
+  {% set title = 'Главная - home' %}
+  {% set meta_d = 'Описание' %}
+  {% set theme_color = '#FFFFFF' %}
+  {% set data = load('test') %}
+
+  <h1>Привет, я новый сайт, сверстай меня скорей =)</h1>
 
 
-{% include './layout/footer.twig' %}
+
+  {{  data.benefits['user']['name'] }}
+
+
+
+
+{% endblock %}
+
+{% block script %}
+jhgjhdsgfjhsdgf
+{% endblock %}

@@ -59,4 +59,8 @@ typings/
 .env
 
 # dist files
-# dist
+dist
+
+# temp files
+temp
+

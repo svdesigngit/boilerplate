@@ -9,6 +9,8 @@ const { img } = require('./tasks/img');
 const { fonts } = require('./tasks/fonts');
 const { video } = require('./tasks/video');
 const { serve } = require('./tasks/serve');
+// const { injects } = require('./tasks/injects');
+const { static } = require('./tasks/static');
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -19,10 +21,12 @@ if (isDev) {
       img,
       fonts,
       twig,
+      scss,
       javascript,
       video,
-      scss
     ),
+    static,
+    // injects,
     serve
   );
 } else {
