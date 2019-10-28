@@ -1,56 +1,238 @@
-* {
-    box-sizing: border-box;
+html {
+  box-sizing: border-box;
+  font-size: $font-basic;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-html {
-    font-size: 10px;
+* {
+  box-sizing: inherit;
+}
+
+*::selection {
+  background-color: rgba($color: #f00, $alpha: 0.9);
+  color: $white;
 }
 
 body {
-    font-size: $fontSize;
-    font-family: $fontFamily;
-    line-height: $lineHeight;
-    color: $colorFont;
-    background-color: $colorBackground;
-    min-width: 1280px;
+  font-size: em($font-basic);
+  font-family: $font-family;
+  line-height: $line-height;
+  color: $color-font;
+  background-color: $color-background;
+  min-width: 320px;
 }
 
 h1 {
-    margin-bottom: vertical-indent(4);
-    line-height: 40px;
-    font-size: $fontSizeH1;
-    font-weight: $fontSemibold;
-    color: $colorFont;
+  font-size: em(36);
+  color: $color-font;
+  line-height: 40px;
+  font-weight: 400;
+  // margin-bottom: vertical-indent(4);
+  margin-top: 0;
+
+  @include breakpoints(xl) {
+    font-size: em(36);
+  }
+
+  a {
+    font: inherit;
+    color: inherit;
+  }
 }
 
 h2 {
-    font-size: $fontSizeH2;
-    line-height: 32px;
-    font-weight: $fontSemibold;
-    color: $colorFont;
+  font-size: em(30);
+  color: $color-font;
+  font-weight: 400;
+  // margin-bottom: vertical-indent(4);
+  margin-top: 0;
+
+  @include breakpoints(xl) {
+    font-size: em(30);
+  }
+
+  a {
+    font: inherit;
+    color: inherit;
+  }
 }
 
 h3 {
-    font-size: $fontSizeH3;
-    line-height: 28px;
-    font-weight: $fontRegular;
-    color: $colorFont;
+  font-size: em(18);
+  color: $color-font;
+  font-size: em(18);
+  line-height: 24px;
+  font-weight: 400;
+  // margin-bottom: vertical-indent(4);
+  margin-top: 0;
+
+  @include breakpoints(xl) {
+    font-size: em(18);
+  }
+
+  a {
+    font: inherit;
+    color: inherit;
+  }
 }
 
 p {
+  font-size: em(16);
+  line-height: 165%;
+  color: $color-font;
 
+  @include breakpoints(xl) {
+    font-size: em(18);
+    line-height: 150%;
+  }
 }
 
 .secondary-text {
-    font-size: $fontSizeSecondary;
+  font-size: em(14);
+  line-height: 150%;
+  color: $color-font;
+
+  @include breakpoints(xl) {
+    font-size: em(16);
+  }
+}
+
+.mini-text {
+  font-size: em(14);
+  line-height: $line-height;
+  color: $color-font;
+
+  @include breakpoints(xl) {
+    font-size: em(12);
+  }
 }
 
 a {
-    color: $colorLink;
-    text-decoration: none;
+  font-size: em($font-basic);
+  font-weight: 400;
+  font-family: $font-family;
+  line-height: $line-height;
+  color: $color-font;
+  text-decoration: none;
 
-    &:hover {
-        color: $colorLinkHover;
-        text-decoration: underline;
-    }
+  &:hover {
+    color: $color-font;
+    text-decoration: underline;
+  }
+
+  &:active {
+  }
+
+  &:focus {
+  }
 }
+
+button {
+  box-shadow: none;
+  background-color: $trs;
+  border: 0;
+  display: flex;
+  font-size: em($font-basic);
+  font-family: $font-family;
+  line-height: $line-height;
+  color: $color-font;
+  text-align: center;
+  border-radius: 4px;
+
+  &:focus {
+    cursor: pointer;
+  }
+
+  span {
+    width: 100%;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+input,
+textarea {
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  padding: 0;
+  -webkit-padding-start: 0;
+  overflow: hidden;
+}
+
+input::placeholder,
+input[placeholder],
+input::-moz-placeholder,
+input:-moz-placeholder,
+input:-ms-input-placeholder,
+input::-webkit-input-placeholder,
+textarea[placeholder],
+textarea::-moz-placeholder,
+textarea:-moz-placeholder,
+textarea:-ms-input-placeholder,
+textarea::-webkit-input-placeholder {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  font-size: em(16px);
+  line-height: 24px;
+  color: #9c9c9c;
+}
+
+// input::-internal-autofill-previewed,
+// input::-internal-autofill-selected,
+// textarea::-internal-autofill-previewed,
+// textarea::-internal-autofill-selected,
+// select::-internal-autofill-previewed,
+// select::-internal-autofill-selected,
+// input::-webkit-internal-autofill-selected,
+// input::-webkit-internal-autofill-selected:hover,
+// input::-webkit-internal-autofill-selected:focus,
+// input::-webkit-internal-autofill-selected:active {
+//   background-color: $trs !important;
+// }
+
+// @-webkit-keyframes autofill {
+//   to {
+//     color: $white;
+//     background: $trs;
+//   }
+// }
+
+// .pointerEventsNone {
+//   pointer-events: none;
+// }
+
+// input:-webkit-autofill {
+//   -webkit-animation-name: autofill;
+//   -webkit-animation-fill-mode: both;
+// }
+
+// input:-webkit-autofill {
+//   box-shadow: inset 0 0 0 1000px $trs;
+// }
+
+// input:-webkit-autofill,
+// input:-webkit-autofill:hover,
+// input:-webkit-autofill:focus,
+// input:-webkit-autofill:active {
+//   -webkit-box-shadow: 0 0 0 30px $trs inset !important;
+// }
+
+// input::-webkit-autofill {
+//   -webkit-text-fill-color: $trs !important; /* цвет текста */
+//   color: $white !important; /* цвет текста */
+// }
+
+// input::-webkit-contacts-auto-fill-button {
+//   visibility: hidden;
+//   display: none !important;
+//   pointer-events: none;
+//   position: absolute;
+//   right: 0;
+// }

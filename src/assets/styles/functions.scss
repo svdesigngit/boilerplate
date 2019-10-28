@@ -1,3 +1,37 @@
 @function vertical-indent($size) {
-    @return $rhythm * $size;
+  @return $rhythm * $size;
+}
+
+@function is-percentage($value) {
+  @return is-number($value) and unit($value) == '%';
+}
+
+@function on-percent($percent, $context: $font-basic) {
+  @if (is-percentage($percent)) {
+    $percent: $percent * $context * 1em;
+  } @else {
+    $percent: $percent * $context * 1em;
+  }
+
+  @return $percent;
+}
+
+@function em($pixels, $context: $font-basic) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1em;
+}
+
+@function get-width($container, $counts, $columns: $default-grid-columns) {
+  @if (unitless($container)) {
+    $container: $container * 1px;
+  }
+
+  @return $container / $columns * $counts;
 }

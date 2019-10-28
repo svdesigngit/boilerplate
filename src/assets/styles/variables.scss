@@ -1,42 +1,52 @@
-/* COLORS */
-$gray:            			#ABABAB;
-$black:					    #000000;
-$blackLight:				rgba($black, 0.04);
-$hinted:				    rgba($black, 0.32);
-$white:					    #ffffff;
+// COLORS
+$trs:                transparent;
+$black:					     #1f1f1f;
+$white:					     #ffffff;
 
-$colorHideLight:			#4488FF;
-$colorHideLight2:			#3D7AE6;
-$colorHideLight3:			#69A0F6;
+// BTN
+$main-btn:           #ff4c4f;
+$main-btn--hover:    #fccfd3;
+$main-btn--pressed:  #faa8b0;
 
-$colorPanel:                #284159;
+$secondary-btn:           #0c0a24;
+$secondary-btn--hover:    #fccfd3;
+$secondary-btn--pressed:  #faa8b0;
 
-$colorBackground:           #284159;
+$color-font:              $black;
+$color-background:        $white;
+$segmet-background-color: #e7edff;
 
-$colorError:                #F15866;
-
-$colorBorder:               rgba($black, 0.16);
-
-$colorFont:				    rgba($black, 0.90);
-$colorFontInverted:		    rgba($white, 0.90);
-
-$colorLink:             	$colorHideLight;
-$colorLinkHover:      	    $colorHideLight;
-
-$cursorHover:				pointer;
-$cursorDisabled: 		    not-allowed;
+$header-bg:         #22212f;
 
 // FONTS
-$fontSize:					1.4rem;
-$fontSizeSecondary:			1.2rem;
-$fontSizeH1:                2.8rem;
-$fontSizeH2:                2rem;
-$fontSizeH3:                1.8rem;
-$fontFamily:				'Open Sans', sans-serif;
-$fontRegular:				400;
-$fontSemibold:				600;
+$font-family:       'Gerbera';
+$font-name-regular: 'Gerbera-Regular';
+$font-name-bold:    'Gerbera-Bold';
 
-$lineHeight:				1.4em;
+$font-basic:        18px !default;
+$line-height:				24px !default;
 
 // Базовый ветикальный ритм
-$rhythm:                    8px;
+$rhythm:            8px;
+
+// Grid
+$default-grid-columns: 12;
+
+// breakpoints
+$breakpoints: (
+  'xs':   0,
+  'sm':   640px,
+  'md':   768px,
+  'lg':   1024px,
+  'xl':   1280px,
+  'xxl':  1920px
+) !default;
+
+// breakpoints  
+$containers: (
+  'xs':   0,
+  'sm':   640px,
+  'md':   768px,
+  'lg':   1024px,
+  'xl':   1400px
+) !default;

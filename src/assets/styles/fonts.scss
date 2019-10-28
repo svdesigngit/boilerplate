@@ -1,21 +1,17 @@
-/* open-sans-regular - latin_cyrillic */
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Open Sans Regular'), local('OpenSans-Regular'),
-       url('../fonts/open-sans-v15-latin_cyrillic-regular.woff2') format('woff2'),
-       url('../fonts/open-sans-v15-latin_cyrillic-regular.woff') format('woff'),
-       url('../fonts/open-sans-v15-latin_cyrillic-regular.ttf') format('truetype');
-}
+@import './mixins/_font-face-generator';
 
-/* open-sans-SemiBold - latin_cyrillic */
+/*
 @font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 600;
-  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
-       url('../fonts/open-sans-v15-latin_cyrillic-600.woff2') format('woff2'),
-       url('../fonts/open-sans-v15-latin_cyrillic-600.woff') format('woff'),
-       url('../fonts/open-sans-v15-latin_cyrillic-600.ttf') format('truetype');
+  font-family: "Samplina Neue";
+  font-style: italic;
+  font-weight: bold;
+  src: url("fonts/SamplinaNeue.eot?") format("eot"),
+       url("fonts/SamplinaNeue.woff2") format("woff2"),
+       url("fonts/SamplinaNeue.woff") format("woff"),
+       url("fonts/SamplinaNeue.ttf") format("truetype"),
+       url("fonts/SamplinaNeue.svg#Samplina_Neue") format("svg");
 }
+*/
+
+@include font-face($font-family, $font-name-regular, 400, normal, woff2 woff ttf);
+@include font-face($font-family, $font-name-bold, 700, normal, woff2 woff ttf);

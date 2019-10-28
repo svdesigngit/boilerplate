@@ -1,0 +1,30 @@
+@import './mixins/_flexbox-grid-mixins';
+
+$default-grid-columns: 12;
+$default-grid-gutter: 40px;
+
+.container {
+  margin: 0 auto;
+  height: 100%;
+  
+  @each $key, $width in $containers {
+    @include breakpoints($key) {
+      max-width: $width;
+    }
+  }
+}
+
+.grid {
+  @include grid($gutter: $default-grid-gutter);
+
+  @for $i from 1 through $default-grid-columns {
+    > .grid__col-#{$i} {
+      @include grid-col(
+        $col: $i,
+        $grid-columns: $default-grid-columns,
+        $gutter: $default-grid-gutter,
+        $condensed: true
+      );
+    }
+  }
+}
