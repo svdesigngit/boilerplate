@@ -55,7 +55,7 @@ const compileTwig = cb => {
     content_unformatted: []
   };
 
-  src(config.pages.input)
+  return src(config.pages.input)
     .pipe(plumber(config.notify))
     .pipe(
       twig({
@@ -68,7 +68,7 @@ const compileTwig = cb => {
     .pipe(dest(config.pages.output))
     .pipe(reload({ stream: true }));
 
-  cb();
+  // cb();
 };
 
 exports.twig = compileTwig;

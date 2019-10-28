@@ -4,11 +4,11 @@ const plumber = require('gulp-plumber');
 const config = require('./config');
 
 const video = cb => {
-  src(config.video.input)
+  return src(config.video.input)
     .pipe(plumber(config.notify))
     .pipe(dest(config.video.output));
 
-  cb();
+  // cb();
 };
 
 exports.video = video;

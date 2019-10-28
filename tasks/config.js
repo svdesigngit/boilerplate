@@ -46,7 +46,7 @@ module.exports = {
     output: `build/`
   },
   fonts: {
-    input: `src/fonts/**/*.{ttf,eot,svg,woff,woff2}`,
+    input: `src/assets/fonts/**/*.{ttf,eot,svg,woff,woff2}`,
     output: `build/fonts/`
   },
   favicons: {

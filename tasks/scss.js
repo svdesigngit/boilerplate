@@ -24,7 +24,7 @@ const scss = cb => {
     objectFitImages()
   ];
 
-  src(config.styles.input)
+  return src(config.styles.input)
     .pipe(plumber(config.notify))
     .pipe(gulpif(isDev, sourcemaps.init()))
     .pipe(
@@ -41,7 +41,7 @@ const scss = cb => {
     .pipe(gulpif(!isDev, dest(config.styles.output)))
     .pipe(reload({ stream: true }));
 
-  cb();
+  // cb();
 };
 
 exports.scss = scss;

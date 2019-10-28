@@ -10,11 +10,14 @@ gulp.task('png:sprite', function () {
       padding: 4,
       imgPath: '../img/' + fileName
     }));
+    
   let imgStream = spriteData.img
     .pipe(buffer())
     .pipe(imagemin())
     .pipe(gulp.dest('build/img'));
+
   let cssStream = spriteData.css
     .pipe(gulp.dest(dirs.source + '/sass/'));
+
   return merge(imgStream, cssStream);
 });

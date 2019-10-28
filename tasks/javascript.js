@@ -6,12 +6,12 @@ const config = require('./config');
 const webpackConfig = require('../webpack.config.js');
 
 const javascript = cb => {
-  src(config.scripts.input)
+  return src(config.scripts.input)
     .pipe(plumber(config.notify))
     .pipe(webpack(webpackConfig))
     .pipe(dest(config.scripts.output));
 
-  cb();
+  // cb();
 };
 
 exports.javascript = javascript;
