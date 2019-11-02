@@ -1,30 +1,51 @@
-@import './mixins/_flexbox-grid-mixins';
+// ФУНКЦИИ сетки
 
-$default-grid-columns: 12;
-$default-grid-gutter: 40px;
+// Переводит число в пиксели
+// $number - {Number} - число - 100
+// @return - {String} - возвращает число в пикселях - 100px
+@function numberToPx($number) {
+  @return $number * 1px;
+}
 
-.container {
-  margin: 0 auto;
-  height: 100%;
-  
-  @each $key, $width in $containers {
-    @include breakpoints($key) {
-      max-width: $width;
-    }
+// Переводит количество колонок в проценты
+// @return - {Number} - возвращает ширину колонки в процентах
+@function column($number:1, $of: $grid-columns) {
+    @return percentage($number / $of);
+}
+
+// МИКСИНЫ сетки
+
+// Контейнер - указываем максимальную ширину и центрирует контент
+@mixin container($width: $grid-max-width) {
+  @if $width == auto {
+    max-width: 100%;
+    width: $width;
+  }
+  @else if unit($width) == "%" {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $width;
+    width: $width;
+  }
+  @else if type-of($width) == "number" {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: numberToPx($width);
+    width: numberToPx($width);
   }
 }
 
-.grid {
-  @include grid($gutter: $default-grid-gutter);
+// Создает строку
+@mixin row() {
+  display: flex;
+  flex-wrap: wrap;
+}
 
-  @for $i from 1 through $default-grid-columns {
-    > .grid__col-#{$i} {
-      @include grid-col(
-        $col: $i,
-        $grid-columns: $default-grid-columns,
-        $gutter: $default-grid-gutter,
-        $condensed: true
-      );
-    }
-  }
+// Создает колонку
+// $number - {Number} - количество колонок
+// $of - {Number} - из какого количества колонок;  по умолчанию = $grid-columns
+@mixin column($number: 1, $of: $grid-columns) {
+  flex-basis: column($number, $of);
+  max-width: column($number, $of);
+  flex-grow: 1;
 }

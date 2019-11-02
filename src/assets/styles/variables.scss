@@ -1,52 +1,81 @@
-// COLORS
-$trs:                transparent;
-$black:					     #1f1f1f;
-$white:					     #ffffff;
+// GRID
+// Максимальная ширина контейнера
+$grid-max-width:          auto;
 
-// BTN
-$main-btn:           #ff4c4f;
-$main-btn--hover:    #fccfd3;
-$main-btn--pressed:  #faa8b0;
-
-$secondary-btn:           #0c0a24;
-$secondary-btn--hover:    #fccfd3;
-$secondary-btn--pressed:  #faa8b0;
-
-$color-font:              $black;
-$color-background:        $white;
-$segmet-background-color: #e7edff;
-
-$header-bg:         #22212f;
-
-// FONTS
-$font-family:       'Gerbera';
-$font-name-regular: 'Gerbera-Regular';
-$font-name-bold:    'Gerbera-Bold';
-
-$font-basic:        18px !default;
-$line-height:				24px !default;
-
-// Базовый ветикальный ритм
-$rhythm:            8px;
-
-// Grid
-$default-grid-columns: 12;
+// Колчество колонок
+$grid-columns:            36;
 
 // breakpoints
-$breakpoints: (
-  'xs':   0,
-  'sm':   640px,
-  'md':   768px,
-  'lg':   1024px,
-  'xl':   1280px,
-  'xxl':  1920px
-) !default;
+$mobile:                  0px;
+$tablet:                  768px;
+$tablet-landscape:        1024px;
+$desktop:                 1280px;
+$desktop-wide:            1440px;
+$fullhd:                  1920px;
+$ultra:                   2560px;
 
-// breakpoints  
-$containers: (
-  'xs':   0,
-  'sm':   640px,
-  'md':   768px,
-  'lg':   1024px,
-  'xl':   1400px
-) !default;
+
+/* COLORS */
+// Градации серого
+$gray:            				#808080;
+$gray-lightest:					  #f8f8f8;
+$gray-lighten:    				#f5f5f5;
+$gray-light:      				#b3b3b3;
+$gray-samidark:   				#CCCCCC;
+$gray-dark:       				#585858;
+$gray-darken:     				#333333;
+$gray-darkest:					  #222222;
+$black:							      #000000;
+$white:						        #ebebeb;
+
+// Брендовые цвета
+$color-main:					    #F0C444;
+$color-main-light:				#F0C444;
+$color-main-dark:				  #A37E12;
+$color-main-darken:				#8D650D;
+
+$color-second:					  #fc7279;
+$color-second-light:			lighten($color-second, 10%);
+$color-second-dark:				darken($color-second, 10%);
+
+// Фон
+$color-background:				#FFFFFF;
+
+// Стандартный цвет текста
+$text-color:					    $gray-darkest;
+
+// Стандартный цвет ссылок
+$link-color:            	$color-main;
+$link-hover-color:      	$color-main-dark;
+$link-active-color:      	lighten($link-hover-color, 10%);
+
+// FONTS
+$font-basic:              10px;
+$font-size:						    1.4rem;
+$font-family:					    'Open Sans', 'Arial', sans-serif;
+$font-bold:						    700;
+$font-regular:					  400;
+$font-light:					    300;
+$font-semibold:					  700;
+
+$font-second-family:			'PT Serif', 'Times', serif;
+$font-second-bold:				700;
+$font-second-regular:			400;
+$font-second-light:				300;
+$font-second-semibold:		700;
+
+$line-height:					    1.4em;
+
+
+$font-sizes: (
+  // $mobile | $tablet | $tablet-landscape | $desktop | $desktop-wide | $fullhd | $ultra
+  h1: (30, 30, 40, 54, 54, 72, 95),
+  h2: (26, 26, 32, 44, 44, 44, 44),
+  h3: (20, 20, 22, 24, 24, 32, 42),
+  h4: (18, 18, 20, 22, 22, 26, 32),
+  h5: (16, 16, 18, 20, 20, 24, 32),
+  h6: (14, 16, 16, 18, 20, 22, 30),
+  p:  (16, 16, 16, 18, 18, 20, 30),
+  p2: (14, 14, 16, 16, 16, 18, 20),
+  small: (12, 12, 14, 14, 14, 16, 18)
+);

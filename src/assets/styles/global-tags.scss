@@ -1,56 +1,49 @@
-html {
+* {
   box-sizing: border-box;
+}
+
+*::selection {
+  background-color: rgba($color: $color-second, $alpha: 0.9);
+  color: $white;
+}
+
+html {
   font-size: $font-basic;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  box-sizing: inherit;
-}
-
-*::selection {
-  background-color: rgba($color: #f00, $alpha: 0.9);
-  color: $white;
-}
-
 body {
-  font-size: em($font-basic);
+  font-size: $font-size;
   font-family: $font-family;
   line-height: $line-height;
-  color: $color-font;
+  color: $text-color;
   background-color: $color-background;
   min-width: 320px;
 }
 
 h1 {
-  font-size: em(36);
-  color: $color-font;
+  @include font-size("h1");
+
+  color: $text-color;
   line-height: 40px;
   font-weight: 400;
   // margin-bottom: vertical-indent(4);
   margin-top: 0;
 
-  @include breakpoints(xl) {
-    font-size: em(36);
-  }
-
-  a {
-    font: inherit;
-    color: inherit;
+  @media #{$desktop-only} {
+    a {
+      font: inherit;
+      color: inherit;
+    }
   }
 }
 
 h2 {
-  font-size: em(30);
-  color: $color-font;
+  color: $text-color;
   font-weight: 400;
   // margin-bottom: vertical-indent(4);
   margin-top: 0;
-
-  @include breakpoints(xl) {
-    font-size: em(30);
-  }
 
   a {
     font: inherit;
@@ -59,17 +52,11 @@ h2 {
 }
 
 h3 {
-  font-size: em(18);
-  color: $color-font;
-  font-size: em(18);
+  color: $text-color;
   line-height: 24px;
   font-weight: 400;
   // margin-bottom: vertical-indent(4);
   margin-top: 0;
-
-  @include breakpoints(xl) {
-    font-size: em(18);
-  }
 
   a {
     font: inherit;
@@ -78,34 +65,18 @@ h3 {
 }
 
 p {
-  font-size: em(16);
   line-height: 165%;
-  color: $color-font;
-
-  @include breakpoints(xl) {
-    font-size: em(18);
-    line-height: 150%;
-  }
+  color: $text-color;
 }
 
 .secondary-text {
-  font-size: em(14);
   line-height: 150%;
-  color: $color-font;
-
-  @include breakpoints(xl) {
-    font-size: em(16);
-  }
+  color: $text-color;
 }
 
 .mini-text {
-  font-size: em(14);
   line-height: $line-height;
-  color: $color-font;
-
-  @include breakpoints(xl) {
-    font-size: em(12);
-  }
+  color: $text-color;
 }
 
 a {
@@ -113,11 +84,11 @@ a {
   font-weight: 400;
   font-family: $font-family;
   line-height: $line-height;
-  color: $color-font;
+  color: $text-color;
   text-decoration: none;
 
   &:hover {
-    color: $color-font;
+    color: $text-color;
     text-decoration: underline;
   }
 
@@ -130,13 +101,13 @@ a {
 
 button {
   box-shadow: none;
-  background-color: $trs;
+  background-color: transparent;
   border: 0;
   display: flex;
   font-size: em($font-basic);
   font-family: $font-family;
   line-height: $line-height;
-  color: $color-font;
+  color: $text-color;
   text-align: center;
   border-radius: 4px;
 

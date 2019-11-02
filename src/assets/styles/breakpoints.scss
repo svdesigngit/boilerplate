@@ -1,0 +1,29 @@
+//СИНТАКСИС МЕДИА ЗАПРОСОВ
+//
+//@media #{$tablet} { ... }
+//@media #{$tablet-only} { ... }
+//@media #{$desktop} { ... }
+//@media #{$desktop-only} { ... }
+
+$screen: "only screen";
+
+$mobile: "#{$screen}";
+$mobile-only: "#{$screen} and (max-width: #{$tablet})";
+
+$tablet: "#{$screen} and (min-width:#{$tablet})";
+$tablet-only: "#{$screen} and (min-width:#{$tablet}) and (max-width:#{$tablet-landscape - 1})";
+
+$tablet-landscape: "#{$screen} and (min-width:#{$tablet-landscape})";
+$tablet-landscape-only: "#{$screen} and (min-width:#{$tablet-landscape}) and (max-width:#{$desktop - 1})";
+
+$desktop: "#{$screen} and (min-width:#{$desktop})";
+$desktop-only: "#{$screen} and (min-width:#{$desktop}) and (max-width:#{$desktop-wide - 1})";
+
+$desktop-wide: "#{$screen} and (min-width:#{$desktop-wide})";
+$desktop-wide-only: "#{$screen} and (min-width:#{$desktop-wide}) and (max-width:#{$desktop-wide - 1})";
+
+$fullhd: "#{$screen} and (min-width:#{$fullhd})";
+$fullhd-only: "#{$screen} and (min-width:#{$fullhd}) and (max-width:#{$ultra - 1})";
+
+$ultra: "#{$screen} and (min-width:#{$ultra})";
+$ultra-only: "#{$screen} and (min-width:#{$ultra}) and (max-width: 10000px)";

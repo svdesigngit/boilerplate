@@ -4,23 +4,27 @@
 // Переменные
 @import "./variables";
 
-// Шрифты
-@import "./fonts";
-
 // Функции
 @import "./functions";
 
 // Миксины
 @import "./mixins";
 
-// Теги по умолчанию
-@import "./global-tags";
+// Breakpoints
+@import './breakpoints';
 
 // Grid
 @import './grid';
 
+// Шрифты
+@import "./fonts";
+
+// Default tags
+@import "./global-tags";
+
 // Libs
 @import './libs/swiper.min.scss';
+
 
 // Components
 @import "../../components/components";

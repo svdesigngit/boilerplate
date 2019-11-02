@@ -1,4 +1,4 @@
-@import './mixins/_font-face-generator';
+//@import './mixins/_font-face-generator';
 
 /*
 @font-face {
@@ -13,5 +13,34 @@
 }
 */
 
-@include font-face($font-family, $font-name-regular, 400, normal, woff2 woff ttf);
-@include font-face($font-family, $font-name-bold, 700, normal, woff2 woff ttf);
+//@include font-face($font-family, $font-name-regular, 400, normal, woff2 woff ttf);
+//@include font-face($font-family, $font-name-bold, 700, normal, woff2 woff ttf);
+
+
+$font-breakpoints: (
+  $mobile,
+  $tablet,
+  $tablet-landscape,
+  $desktop,
+  $desktop-wide,
+  $fullhd,
+  $ultra
+);
+
+$line-heights-amount: length(map-get($font-sizes, h1));
+
+// МИКСИНЫ
+// Генерирует font-size и line-height для брекпоинта
+@mixin generateFontSize($font-size, $i) {
+  font-size: #{nth(nth(map-get($font-sizes, $font-size), $i) / 10, 1)}rem;
+}
+
+// Создает всю струтктуру размеров шрифта со всеми брейкпоинтами
+@mixin font-size($font-size) {
+  @for $i from 1 through length($font-breakpoints) {
+    @if nth($font-breakpoints, $i) == "only screen" {      @include generateFontSize($font-size, $i); } @else {
+      @media #{nth($font-breakpoints, $i)} {
+        @include generateFontSize($font-size, $i); }
+    }
+  }
+}
