@@ -38,7 +38,7 @@
   transition: .2s ease-out;
 }
 
-// clearfix на слечай float
+// clearfix на случай float
 @mixin clearfix {
   &:before, &:after {
     content: " ";
