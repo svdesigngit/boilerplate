@@ -47,6 +47,7 @@ $text-color:					    $gray-darkest;
 // Стандартный цвет ссылок
 $link-color:            	$color-main;
 $link-hover-color:      	$color-main-dark;
+$link-focus-color:      	$color-main-darken;
 $link-active-color:      	lighten($link-hover-color, 10%);
 
 // FONTS
@@ -64,18 +65,19 @@ $font-second-regular:			400;
 $font-second-light:				300;
 $font-second-semibold:		700;
 
-$line-height:					    1.4em;
+$line-height:					    1.5em;
 
 
 $font-sizes: (
   // $mobile | $tablet | $tablet-landscape | $desktop | $desktop-wide | $fullhd | $ultra
-  h1: (30, 30, 40, 54, 54, 72, 95),
-  h2: (26, 26, 32, 44, 44, 44, 44),
-  h3: (20, 20, 22, 24, 24, 32, 42),
-  h4: (18, 18, 20, 22, 22, 26, 32),
-  h5: (16, 16, 18, 20, 20, 24, 32),
-  h6: (14, 16, 16, 18, 20, 22, 30),
-  p:  (16, 16, 16, 18, 18, 20, 30),
-  p2: (14, 14, 16, 16, 16, 18, 20),
-  small: (12, 12, 14, 14, 14, 16, 18)
+  h1:     (30, 30, 40, 54, 54, 72, 95),
+  h2:     (26, 26, 32, 44, 44, 44, 44),
+  h3:     (20, 20, 22, 24, 24, 32, 42),
+  h4:     (18, 18, 20, 22, 22, 26, 32),
+  h5:     (16, 16, 18, 20, 20, 24, 32),
+  h6:     (14, 16, 16, 18, 20, 22, 30),
+  p:      (16, 16, 16, 18, 18, 20, 30),
+  p2:     (14, 14, 16, 16, 16, 18, 20),
+  small:  (12, 12, 14, 14, 14, 16, 18),
+  form:   (16, 16, 16, 18, 18, 20, 30)
 );

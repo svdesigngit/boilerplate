@@ -23,41 +23,59 @@ body {
 }
 
 h1 {
-  @include font-size("h1");
+  @include font-size('h1');
 
   color: $text-color;
-  line-height: 40px;
-  font-weight: 400;
-  // margin-bottom: vertical-indent(4);
-  margin-top: 0;
-
-  @media #{$desktop-only} {
-    a {
-      font: inherit;
-      color: inherit;
-    }
-  }
+  line-height: 1.25em;
+  font-weight: $font-bold;
 }
 
 h2 {
-  color: $text-color;
-  font-weight: 400;
-  // margin-bottom: vertical-indent(4);
-  margin-top: 0;
+  @include font-size('h2');
 
-  a {
-    font: inherit;
-    color: inherit;
-  }
+  line-height: 1.3em;
+  color: $text-color;
+  font-weight: $font-bold;
 }
 
 h3 {
-  color: $text-color;
-  line-height: 24px;
-  font-weight: 400;
-  // margin-bottom: vertical-indent(4);
-  margin-top: 0;
+  @include font-size('h3');
 
+  color: $text-color;
+  line-height: 1.5em;
+  font-weight: $font-bold;
+}
+
+h4 {
+  @include font-size('h4');
+
+  color: $text-color;
+  line-height: 1.5em;
+  font-weight: $font-bold;
+}
+
+h5 {
+  @include font-size('h5');
+
+  color: $text-color;
+  line-height: 1.5em;
+  font-weight: $font-bold;
+}
+
+h6 {
+  @include font-size('h6');
+
+  color: $text-color;
+  line-height: 1.5em;
+  font-weight: $font-bold;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   a {
     font: inherit;
     color: inherit;
@@ -65,12 +83,14 @@ h3 {
 }
 
 p {
+  @include font-size('p');
+
   line-height: 165%;
   color: $text-color;
 }
 
 .secondary-text {
-  line-height: 150%;
+  line-height: 1.5em;
   color: $text-color;
 }
 
@@ -80,22 +100,22 @@ p {
 }
 
 a {
-  font-size: em($font-basic);
   font-weight: 400;
   font-family: $font-family;
-  line-height: $line-height;
-  color: $text-color;
+  color: $link-color;
   text-decoration: none;
 
   &:hover {
-    color: $text-color;
+    color: $link-hover-color;
     text-decoration: underline;
   }
 
   &:active {
+    color: $link-active-color;
   }
 
   &:focus {
+    color: $link-focus-color;
   }
 }
 
@@ -147,12 +167,12 @@ textarea::-moz-placeholder,
 textarea:-moz-placeholder,
 textarea:-ms-input-placeholder,
 textarea::-webkit-input-placeholder {
+  @include font-size('form');
+
   white-space: nowrap;
   text-overflow: ellipsis;
-
-  font-size: em(16px);
-  line-height: 24px;
-  color: #9c9c9c;
+  line-height: 1.4em;
+  color: $text-color;
 }
 
 // input::-internal-autofill-previewed,
