@@ -5,6 +5,9 @@ $grid-max-width:          auto;
 // Колчество колонок
 $grid-columns:            36;
 
+// Вертикальный ритм
+$rhythm:                  4px;
+
 // breakpoints
 $mobile:                  0px;
 $tablet:                  768px;
@@ -13,7 +16,6 @@ $desktop:                 1280px;
 $desktop-wide:            1440px;
 $fullhd:                  1920px;
 $ultra:                   2560px;
-
 
 /* COLORS */
 // Градации серого
@@ -53,12 +55,14 @@ $link-active-color:      	lighten($link-hover-color, 10%);
 // FONTS
 $font-basic:              10px;
 $font-size:						    1.4rem;
+$font-name:					      'Open Sans';
 $font-family:					    'Open Sans', 'Arial', sans-serif;
 $font-bold:						    700;
 $font-regular:					  400;
 $font-light:					    300;
 $font-semibold:					  700;
 
+$font-second-name:			'PT Serif';
 $font-second-family:			'PT Serif', 'Times', serif;
 $font-second-bold:				700;
 $font-second-regular:			400;
@@ -66,7 +70,6 @@ $font-second-light:				300;
 $font-second-semibold:		700;
 
 $line-height:					    1.5em;
-
 
 $font-sizes: (
   // $mobile | $tablet | $tablet-landscape | $desktop | $desktop-wide | $fullhd | $ultra

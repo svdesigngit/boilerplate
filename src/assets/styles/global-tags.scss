@@ -1,3 +1,4 @@
+// ГЛОБАЛЬНЫЕ ТЕГИ
 * {
   box-sizing: border-box;
 }
@@ -21,6 +22,8 @@ body {
   background-color: $color-background;
   min-width: 320px;
 }
+
+// ТИПОГРАФИКА
 
 h1 {
   @include font-size('h1');
@@ -146,6 +149,8 @@ ul {
   list-style: none;
 }
 
+// ФОРМЫ
+
 input,
 textarea {
   -webkit-mask-image: -webkit-radial-gradient(white, black);
@@ -227,3 +232,38 @@ textarea::-webkit-input-placeholder {
 //   position: absolute;
 //   right: 0;
 // }
+
+
+// ТАБЛИЦЫ
+// сброс и общая настройка
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+}
+
+thead {
+
+}
+
+tbody {
+
+}
+
+tfoot {
+
+}
+
+tr {
+
+}
+
+td {
+  font-weight: $font-regular;
+}
+
+th {
+  font-weight: $font-regular;
+  text-align: left;
+}

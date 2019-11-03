@@ -1,12 +1,5 @@
 // ФУНКЦИИ сетки
 
-// Переводит число в пиксели
-// $number - {Number} - число - 100
-// @return - {String} - возвращает число в пикселях - 100px
-@function numberToPx($number) {
-  @return $number * 1px;
-}
-
 // Переводит количество колонок в проценты
 // @return - {Number} - возвращает ширину колонки в процентах
 @function column($number:1, $of: $grid-columns) {

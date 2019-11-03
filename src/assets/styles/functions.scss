@@ -1,9 +1,19 @@
-@function vertical-indent($size) {
-  @return $rhythm * $size;
+// Переводит число в пиксели
+// $number - {Number} - число - 100
+// @return - {String} - возвращает число в пикселях - 100px
+@function numberToPx($number) {
+  @return $number * 1px;
 }
 
+// Проверяет задано ли значение в %
 @function is-percentage($value) {
   @return is-number($value) and unit($value) == '%';
+}
+
+// Вычисляет вертикальный и горизотанльцы ритм
+// $size - {Number} - число - множитель для переменной $rhythm
+@function rhythm($size) {
+  @return $rhythm * $size;
 }
 
 @function on-percent($percent, $context: $font-basic) {
@@ -16,6 +26,7 @@
   @return $percent;
 }
 
+// Переводит размер шрифта из пикселей в EM
 @function em($pixels, $context: $font-basic) {
   @if (unitless($pixels)) {
     $pixels: $pixels * 1px;
@@ -26,12 +37,4 @@
   }
 
   @return $pixels / $context * 1em;
-}
-
-@function get-width($container, $counts, $columns: $default-grid-columns) {
-  @if (unitless($container)) {
-    $container: $container * 1px;
-  }
-
-  @return $container / $columns * $counts;
 }
