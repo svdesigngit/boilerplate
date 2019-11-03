@@ -144,9 +144,15 @@ button {
 }
 
 ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  @include list-normalize;
+
+  li {
+    @include list-li-normalize;
+  }
+}
+
+ol {
+  list-style: decimal;
 }
 
 // ФОРМЫ
