@@ -3,19 +3,34 @@
 $grid-max-width:          auto;
 
 // Колчество колонок
-$grid-columns:            36;
+$grid-columns:            12;
 
-// Вертикальный ритм
+// Отступы между колонками и внутри колонок
+// Отступы Будут пересчитаны в процены, а указанные значения будут минимальными
+// $mobile | $tablet | $tablet-landscape | $desktop | $desktop-wide | $fullhd | $ultra
+$grid-indents: (
+  'mobile':               15,
+  'tablet':               15,
+  'tablet-landscape':     20,
+  'desktop':              20,
+  'desktop-wide':         30,
+  'fullhd':               40,
+  'ultra':                40
+);
+
+// Ритм
 $rhythm:                  4px;
 
 // breakpoints
-$mobile:                  0px;
-$tablet:                  768px;
-$tablet-landscape:        1024px;
-$desktop:                 1280px;
-$desktop-wide:            1440px;
-$fullhd:                  1920px;
-$ultra:                   2560px;
+$breakpoints:  (
+  'mobile':               0,
+  'tablet':               768,
+  'tablet-landscape':     1024,
+  'desktop':              1280,
+  'desktop-wide':         1440,
+  'fullhd':               1920,
+  'ultra':                2560
+);
 
 /* COLORS */
 // Градации серого
@@ -44,7 +59,7 @@ $color-second-dark:				darken($color-second, 10%);
 $color-background:				#FFFFFF;
 
 // Стандартный цвет текста
-$text-color:					    $gray-darkest;
+$color-text:					    $gray-darkest;
 
 // Стандартный цвет ссылок
 $link-color:            	$color-main;

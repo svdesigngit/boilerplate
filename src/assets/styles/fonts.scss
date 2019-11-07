@@ -25,15 +25,6 @@
 
 
 // breakpoints для генерации размеров шрифтов
-$font-breakpoints: (
-  $mobile,
-  $tablet,
-  $tablet-landscape,
-  $desktop,
-  $desktop-wide,
-  $fullhd,
-  $ultra
-);
 
 $line-heights-amount: length(map-get($font-sizes, h1));
 
@@ -45,11 +36,11 @@ $line-heights-amount: length(map-get($font-sizes, h1));
 
 // Создает всю струтктуру размеров шрифта со всеми брейкпоинтами
 @mixin font-size($font-size) {
-  @for $i from 1 through length($font-breakpoints) {
-    @if nth($font-breakpoints, $i) == "only screen" {
+  @for $i from 1 through length($breakpoints-list) {
+    @if nth($breakpoints-list, $i) == "only screen" {
       @include generateFontSize($font-size, $i);
     } @else {
-      @media #{nth($font-breakpoints, $i)} {
+      @media #{nth($breakpoints-list, $i)} {
         @include generateFontSize($font-size, $i);
       }
     }

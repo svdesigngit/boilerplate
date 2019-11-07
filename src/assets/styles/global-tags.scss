@@ -18,7 +18,7 @@ body {
   font-size: $font-size;
   font-family: $font-family;
   line-height: $line-height;
-  color: $text-color;
+  color: $color-text;
   background-color: $color-background;
   min-width: 320px;
 }
@@ -28,7 +28,7 @@ body {
 h1 {
   @include font-size('h1');
 
-  color: $text-color;
+  color: $color-text;
   line-height: 1.25em;
   font-weight: $font-bold;
 }
@@ -37,14 +37,14 @@ h2 {
   @include font-size('h2');
 
   line-height: 1.3em;
-  color: $text-color;
+  color: $color-text;
   font-weight: $font-bold;
 }
 
 h3 {
   @include font-size('h3');
 
-  color: $text-color;
+  color: $color-text;
   line-height: 1.5em;
   font-weight: $font-bold;
 }
@@ -52,7 +52,7 @@ h3 {
 h4 {
   @include font-size('h4');
 
-  color: $text-color;
+  color: $color-text;
   line-height: 1.5em;
   font-weight: $font-bold;
 }
@@ -60,7 +60,7 @@ h4 {
 h5 {
   @include font-size('h5');
 
-  color: $text-color;
+  color: $color-text;
   line-height: 1.5em;
   font-weight: $font-bold;
 }
@@ -68,7 +68,7 @@ h5 {
 h6 {
   @include font-size('h6');
 
-  color: $text-color;
+  color: $color-text;
   line-height: 1.5em;
   font-weight: $font-bold;
 }
@@ -89,17 +89,17 @@ p {
   @include font-size('p');
 
   line-height: 165%;
-  color: $text-color;
+  color: $color-text;
 }
 
 .secondary-text {
   line-height: 1.5em;
-  color: $text-color;
+  color: $color-text;
 }
 
 .mini-text {
   line-height: $line-height;
-  color: $text-color;
+  color: $color-text;
 }
 
 a {
@@ -130,7 +130,7 @@ button {
   font-size: em($font-basic);
   font-family: $font-family;
   line-height: $line-height;
-  color: $text-color;
+  color: $color-text;
   text-align: center;
   border-radius: 4px;
 
@@ -183,7 +183,7 @@ textarea::-webkit-input-placeholder {
   white-space: nowrap;
   text-overflow: ellipsis;
   line-height: 1.4em;
-  color: $text-color;
+  color: $color-text;
 }
 
 // input::-internal-autofill-previewed,

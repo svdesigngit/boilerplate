@@ -2,9 +2,10 @@
 
 // Переводит количество колонок в проценты
 // @return - {Number} - возвращает ширину колонки в процентах
-@function column($number:1, $of: $grid-columns) {
+@function column($number: 1, $of: $grid-columns) {
     @return percentage($number / $of);
 }
+
 
 // МИКСИНЫ сетки
 
@@ -26,12 +27,29 @@
     max-width: numberToPx($width);
     width: numberToPx($width);
   }
+  overflow: hidden;
 }
 
 // Создает строку
 @mixin row() {
   display: flex;
   flex-wrap: wrap;
+
+  @if $grid-indents {
+    @each $breakpoint-name, $breakpoint-value in $breakpoints-list {
+      @if map_get($grid-indents, $breakpoint-name) > 0 {
+        @if $breakpoint-name == 'mobile' {
+          margin-left: map_get($grid-indents, 'mobile') / 2 * -1px;
+          margin-right: map_get($grid-indents, 'mobile') / 2 * -1px;
+        } @else {
+          @media #{$breakpoint-value} {
+            margin-left: map_get($grid-indents, $breakpoint-name) / 2 * -1px;
+            margin-right: map_get($grid-indents, $breakpoint-name) / 2 * -1px;
+          }
+        }
+      }
+    }
+  }
 }
 
 // Создает колонку
@@ -41,4 +59,34 @@
   flex-basis: column($number, $of);
   max-width: column($number, $of);
   flex-grow: 1;
+
+  @if $grid-indents {
+    @each $breakpoint-name, $breakpoint-value in $breakpoints-list {
+      @if map_get($grid-indents, $breakpoint-name) > 0 {
+        @if $breakpoint-name == 'mobile' {
+          padding-left: map_get($grid-indents, 'mobile') / 2 * 1px;
+          padding-right: map_get($grid-indents, 'mobile') / 2 * 1px;
+        } @else {
+          @media #{$breakpoint-value} {
+            padding-left: map_get($grid-indents, $breakpoint-name) / 2 * 1px;
+            padding-right: map_get($grid-indents, $breakpoint-name) / 2 * 1px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// margin left
+// $number - {Number} - количество колонок
+// $of - {Number} - из какого количества колонок;  по умолчанию из $grid-columns
+@mixin push($number, $of: $grid-columns) {
+  margin-left: column($number, $of);
+}
+
+// margin right
+// $number - {Number} - количество колонок
+// $of - {Number} - из какого количества колонок;  по умолчанию из $grid-columns
+@mixin post($number, $of: $grid-columns) {
+  margin-right: column($number, $of);
 }
