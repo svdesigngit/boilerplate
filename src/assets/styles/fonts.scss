@@ -36,13 +36,15 @@ $line-heights-amount: length(map-get($font-sizes, h1));
 
 // Создает всю струтктуру размеров шрифта со всеми брейкпоинтами
 @mixin font-size($font-size) {
-  @for $i from 1 through length($breakpoints-list) {
-    @if nth($breakpoints-list, $i) == "only screen" {
+  $i: 0;
+  @each $breakpoint-name, $breakpoint-value in $breakpoints-list {
+    $i: $i + 1;
+    @if $breakpoint-name == 'mobile' {
       @include generateFontSize($font-size, $i);
     } @else {
-      @media #{nth($breakpoints-list, $i)} {
-        @include generateFontSize($font-size, $i);
-      }
+        @media #{$breakpoint-value} {
+          @include generateFontSize($font-size, $i);
+       }
     }
   }
 }

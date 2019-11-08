@@ -1,15 +1,14 @@
-.grid-exemple-container {
+.grid-example-container {
   @include container();
 }
 
-.grid-exemple-row {
+.grid-example-row {
   @include row();
   overflow: hidden;
   margin-bottom: rhythm(4);
 }
 
 // 12 колонок
-
 .col-1-12 {
   @include column(1, 12);
 }
@@ -34,6 +33,22 @@
   @include column(6, 12);
 }
 
+.col-11-12 {
+  @include column(11, 12);
+}
+
+.col-5-11 {
+  @include column(5, 11);
+}
+
+.col-6-11 {
+  @include column(6, 11);
+}
+
+.col-3-11 {
+  @include column(3, 11);
+}
+
 .push-col-2 {
   @include push(2,12);
 }
@@ -42,7 +57,9 @@
   @include post(2,12);
 }
 
-.grid-exemple-inner {
+.grid-example-inner {
+  @include font-size('small');
+
   border: 1px solid $gray;
   color:  $gray-darken;
   height: 50px;
