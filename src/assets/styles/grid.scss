@@ -6,28 +6,42 @@
     @return percentage($number / $of);
 }
 
+// Контейнер - вычисляем единицы определяем ширину.
+// @return - {Number} - возвращает ширину контейнера в исходных единицах или px
+@function container($width: auto) {
 
-// МИКСИНЫ сетки
+  @if $width == auto {
+    $width: $width;
+  } @else if type-of($width) == "number" {
+      @if unitless($width) == true {
+        $width: numberToPx($width);
+      } @else {
+        $width: $width;
+      }
+  } @else {
+    // если $width не валидная строка вернуть auto;
+    $width: auto;
+  }
+
+  @return $width;
+}
 
 // Контейнер - указываем максимальную ширину и центрирует контент
-@mixin container($width: $grid-max-width) {
-  @if $width == auto {
-    max-width: 100%;
-    width: $width;
+@mixin container($container-list: $grid-container) {
+  @each $breakpoint-name, $breakpoint-value in $breakpoints-list {
+    @if $breakpoint-name == 'mobile' {
+      max-width: 100%;
+      width: container(map_get($container-list, $breakpoint-name));
+    } @else {
+      @media #{$breakpoint-value} {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: container(map_get($container-list, $breakpoint-name));
+        width: container(map_get($container-list, $breakpoint-name));
+      }
+    }
   }
-  @else if unit($width) == "%" {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: $width;
-    width: $width;
-  }
-  @else if type-of($width) == "number" {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: numberToPx($width);
-    width: numberToPx($width);
-  }
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 // Создает строку

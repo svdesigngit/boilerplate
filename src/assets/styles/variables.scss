@@ -1,6 +1,16 @@
 // GRID
 // Максимальная ширина контейнера
-$grid-max-width:          auto;
+// Рекомендуемые зачения и единицы: auto | px | % | vw
+// Если единицы не указаны будут px
+$grid-container: (
+  'mobile':               auto,
+  'tablet':               auto,
+  'tablet-landscape':     auto,
+  'desktop':              80%,
+  'desktop-wide':         80%,
+  'fullhd':               85%,
+  'ultra':                80%
+);
 
 // Колчество колонок
 $grid-columns:            12;
