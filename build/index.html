@@ -2,285 +2,347 @@
 <html lang="ru">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Вёрстка проекта</title>
-  <style>
-    html {
-      font-size: 10px;
-      line-height: 1.3em;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Вёрстка проекта</title>
+    <style>
+        html {
+            font-size: 10px;
+            line-height: 1.3em;
+        }
 
-    body {
-      font-family: Helvetica, Arial, sans-serif;
-    }
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+        }
 
-    .wrapper {
-      padding: 30px;
-    }
+        .wrapper {
+            padding: 30px;
+        }
 
-    h1 {
-      color: #333;
-      font-size: 3rem;
-    }
+        h1 {
+            color: #333;
+            font-size: 3rem;
+        }
 
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-    li {
-      padding: 10px 0;
-    }
+        li {
+            padding: 10px 0;
+        }
 
-    a {
-      color: #333;
-      text-decoration: underline;
-      transition: all .25s ease-out;
-      font-size: 1.6rem;
-    }
+        a {
+            color: #333;
+            text-decoration: underline;
+            transition: all .25s ease-out;
+            font-size: 1.6rem;
+        }
 
-    a:hover {
-      color: #2962ff;
-      text-decoration: none;
-    }
-  </style>
+        a:hover {
+            color: #2962ff;
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
 
-  <div class="wrapper">
-    <h1>Страницы</h1>
+    <div class="wrapper">
+        <h1>Страницы</h1>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         1524316542
-    
-                <div class="snippet" data-id="snippet_11ad95d">
-                  <div class="snippet__head">
-                    dump snippet
-                    <button data-hide>
-                      <span data-open class="show">hide</span>
-                      <span data-hide class="">open</span>
-                    </button>
-                  </div>
-                  <div class="snippet__body" data-body>
-                    <pre>
-                      Gulp and Twig 
-                    </pre>
-                  </div>
-                  <script>
-                    const snippet_11ad95d = document.querySelector('[data-id="snippet_11ad95d"]');
-                    const btn_11ad95d = snippet_11ad95d.querySelector("[data-hide]");
-                    const open_11ad95d = btn_11ad95d.querySelector("[data-open]");
-                    const hide_11ad95d = btn_11ad95d.querySelector("[data-hide]");
-                    const body_11ad95d = snippet_11ad95d.querySelector("[data-body]");
-                    
-                    const toggleSnippet_11ad95d = () => {
-                      body_11ad95d.classList.toggle("hidden");
-                      open_11ad95d.classList.toggle("show");
-                      hide_11ad95d.classList.toggle("show");
-                    };
-                    
-                    btn_11ad95d.addEventListener("click", toggleSnippet_11ad95d);
-                  </script>
-                  <style>
-                    [data-id="snippet_11ad95d"].snippet {}
-                    [data-id="snippet_11ad95d"] .snippet__head {
-                      background-color: #fff;
-                      border: 1px solid #000;
-                      color: #000;
-                      padding: 5px; 
-                      margin: 5px; 
+
+        <div class="snippet" data-id="snippet_f68647">
+            <div class="snippet__head">
+                dump snippet
+                <button data-hide>
+                    <span data-open class="show">hide</span>
+                    <span data-hide class="">open</span>
+                </button>
+            </div>
+            <div class="snippet__body" data-body>
+                <pre>
+                    Gulp and Twig
+                </pre>
+            </div>
+            <script>
+                const snippet_f68647 = document.querySelector('[data-id="snippet_f68647"]');
+                const btn_f68647 = snippet_f68647.querySelector("[data-hide]");
+                const open_f68647 = btn_f68647.querySelector("[data-open]");
+                const hide_f68647 = btn_f68647.querySelector("[data-hide]");
+                const body_f68647 = snippet_f68647.querySelector("[data-body]");
+
+                const toggleSnippet_f68647 = () => {
+                    body_f68647.classList.toggle("hidden");
+                    open_f68647.classList.toggle("show");
+                    hide_f68647.classList.toggle("show");
+                };
+
+                btn_f68647.addEventListener("click", toggleSnippet_f68647);
+            </script>
+            <style>
+                [data-id="snippet_f68647"].snippet {}
+
+                [data-id="snippet_f68647"] .snippet__head {
+                    background-color: #fff;
+                    border: 1px solid #000;
+                    color: #000;
+                    padding: 5px;
+                    margin: 5px;
+                }
+
+                [data-id="snippet_f68647"] .snippet__head button span {
+                    display: none;
+                }
+
+                [data-id="snippet_f68647"] .snippet__head button span.show {
+                    display: inline-block;
+                }
+
+                [data-id="snippet_f68647"] .snippet__body {
+                    background-color: #000;
+                    color: #fff;
+                    padding: 5px;
+                    margin: 5px;
+                }
+
+                [data-id="snippet_f68647"] .snippet__body.hidden {
+                    display: none;
+                }
+
+                [data-id="snippet_f68647"] pre {}
+
+                [data-id="snippet_f68647"] .string {
+                    color: green;
+                }
+
+                [data-id="snippet_f68647"] .number {
+                    color: darkorange;
+                }
+
+                [data-id="snippet_f68647"] .boolean {
+                    color: blue;
+                }
+
+                [data-id="snippet_f68647"] .null {
+                    color: magenta;
+                }
+
+                [data-id="snippet_f68647"] .key {
+                    color: red;
+                }
+            </style>
+        </div>
+
+
+        <div class="snippet" data-id="snippet_c5354b">
+            <div class="snippet__head">
+                dump snippet
+                <button data-hide>
+                    <span data-open class="show">hide</span>
+                    <span data-hide class="">open</span>
+                </button>
+            </div>
+            <div class="snippet__body" data-body>
+                <pre>
+                    {
+                    <span class="key">"title":</span> <span class="string">"Gulp and Twig"</span>,
+                    <span class="key">"benefits":</span> {
+                    <span class="key">"user":</span> {
+                    <span class="key">"name":</span> <span class="number">1524316542</span>,
+                    <span class="key">"second":</span> <span class="string">"kjhdgjhg"</span>
                     }
-                    [data-id="snippet_11ad95d"] .snippet__head button span {
-                      display: none;
                     }
-                    [data-id="snippet_11ad95d"] .snippet__head button span.show {
-                      display: inline-block;
                     }
-                    [data-id="snippet_11ad95d"] .snippet__body {
-                      background-color: #000;
-                      color: #fff;
-                      padding: 5px; 
-                      margin: 5px; 
-                    }
-                    [data-id="snippet_11ad95d"] .snippet__body.hidden {
-                      display: none;
-                    }
-                    [data-id="snippet_11ad95d"] pre {}
-                    [data-id="snippet_11ad95d"] .string { color: green; }
-                    [data-id="snippet_11ad95d"] .number { color: darkorange; }
-                    [data-id="snippet_11ad95d"] .boolean { color: blue; }
-                    [data-id="snippet_11ad95d"] .null { color: magenta; }
-                    [data-id="snippet_11ad95d"] .key { color: red; }
-                  </style>
-                </div>
-              
-    
-                <div class="snippet" data-id="snippet_5b9b299">
-                  <div class="snippet__head">
-                    dump snippet
-                    <button data-hide>
-                      <span data-open class="show">hide</span>
-                      <span data-hide class="">open</span>
-                    </button>
-                  </div>
-                  <div class="snippet__body" data-body>
-                    <pre>
-                      {
-  <span class="key">"title":</span> <span class="string">"Gulp and Twig"</span>,
-  <span class="key">"benefits":</span> {
-    <span class="key">"user":</span> {
-      <span class="key">"name":</span> <span class="number">1524316542</span>,
-      <span class="key">"second":</span> <span class="string">"kjhdgjhg"</span>
-    }
-  }
-} 
-                    </pre>
-                  </div>
-                  <script>
-                    const snippet_5b9b299 = document.querySelector('[data-id="snippet_5b9b299"]');
-                    const btn_5b9b299 = snippet_5b9b299.querySelector("[data-hide]");
-                    const open_5b9b299 = btn_5b9b299.querySelector("[data-open]");
-                    const hide_5b9b299 = btn_5b9b299.querySelector("[data-hide]");
-                    const body_5b9b299 = snippet_5b9b299.querySelector("[data-body]");
-                    
-                    const toggleSnippet_5b9b299 = () => {
-                      body_5b9b299.classList.toggle("hidden");
-                      open_5b9b299.classList.toggle("show");
-                      hide_5b9b299.classList.toggle("show");
-                    };
-                    
-                    btn_5b9b299.addEventListener("click", toggleSnippet_5b9b299);
-                  </script>
-                  <style>
-                    [data-id="snippet_5b9b299"].snippet {}
-                    [data-id="snippet_5b9b299"] .snippet__head {
-                      background-color: #fff;
-                      border: 1px solid #000;
-                      color: #000;
-                      padding: 5px; 
-                      margin: 5px; 
-                    }
-                    [data-id="snippet_5b9b299"] .snippet__head button span {
-                      display: none;
-                    }
-                    [data-id="snippet_5b9b299"] .snippet__head button span.show {
-                      display: inline-block;
-                    }
-                    [data-id="snippet_5b9b299"] .snippet__body {
-                      background-color: #000;
-                      color: #fff;
-                      padding: 5px; 
-                      margin: 5px; 
-                    }
-                    [data-id="snippet_5b9b299"] .snippet__body.hidden {
-                      display: none;
-                    }
-                    [data-id="snippet_5b9b299"] pre {}
-                    [data-id="snippet_5b9b299"] .string { color: green; }
-                    [data-id="snippet_5b9b299"] .number { color: darkorange; }
-                    [data-id="snippet_5b9b299"] .boolean { color: blue; }
-                    [data-id="snippet_5b9b299"] .null { color: magenta; }
-                    [data-id="snippet_5b9b299"] .key { color: red; }
-                  </style>
-                </div>
-              
-    <br>
+                </pre>
+            </div>
+            <script>
+                const snippet_c5354b = document.querySelector('[data-id="snippet_c5354b"]');
+                const btn_c5354b = snippet_c5354b.querySelector("[data-hide]");
+                const open_c5354b = btn_c5354b.querySelector("[data-open]");
+                const hide_c5354b = btn_c5354b.querySelector("[data-hide]");
+                const body_c5354b = snippet_c5354b.querySelector("[data-body]");
+
+                const toggleSnippet_c5354b = () => {
+                    body_c5354b.classList.toggle("hidden");
+                    open_c5354b.classList.toggle("show");
+                    hide_c5354b.classList.toggle("show");
+                };
+
+                btn_c5354b.addEventListener("click", toggleSnippet_c5354b);
+            </script>
+            <style>
+                [data-id="snippet_c5354b"].snippet {}
+
+                [data-id="snippet_c5354b"] .snippet__head {
+                    background-color: #fff;
+                    border: 1px solid #000;
+                    color: #000;
+                    padding: 5px;
+                    margin: 5px;
+                }
+
+                [data-id="snippet_c5354b"] .snippet__head button span {
+                    display: none;
+                }
+
+                [data-id="snippet_c5354b"] .snippet__head button span.show {
+                    display: inline-block;
+                }
+
+                [data-id="snippet_c5354b"] .snippet__body {
+                    background-color: #000;
+                    color: #fff;
+                    padding: 5px;
+                    margin: 5px;
+                }
+
+                [data-id="snippet_c5354b"] .snippet__body.hidden {
+                    display: none;
+                }
+
+                [data-id="snippet_c5354b"] pre {}
+
+                [data-id="snippet_c5354b"] .string {
+                    color: green;
+                }
+
+                [data-id="snippet_c5354b"] .number {
+                    color: darkorange;
+                }
+
+                [data-id="snippet_c5354b"] .boolean {
+                    color: blue;
+                }
+
+                [data-id="snippet_c5354b"] .null {
+                    color: magenta;
+                }
+
+                [data-id="snippet_c5354b"] .key {
+                    color: red;
+                }
+            </style>
+        </div>
+
+        <br>
     Gulp and Twig
-    <br>
-    
-                <div class="snippet" data-id="snippet_4c44c2f">
-                  <div class="snippet__head">
-                    dump snippet
-                    <button data-hide>
-                      <span data-open class="show">hide</span>
-                      <span data-hide class="">open</span>
-                    </button>
-                  </div>
-                  <div class="snippet__body" data-body>
-                    <pre>
-                      Gulp and Twig 
-                    </pre>
-                  </div>
-                  <script>
-                    const snippet_4c44c2f = document.querySelector('[data-id="snippet_4c44c2f"]');
-                    const btn_4c44c2f = snippet_4c44c2f.querySelector("[data-hide]");
-                    const open_4c44c2f = btn_4c44c2f.querySelector("[data-open]");
-                    const hide_4c44c2f = btn_4c44c2f.querySelector("[data-hide]");
-                    const body_4c44c2f = snippet_4c44c2f.querySelector("[data-body]");
-                    
-                    const toggleSnippet_4c44c2f = () => {
-                      body_4c44c2f.classList.toggle("hidden");
-                      open_4c44c2f.classList.toggle("show");
-                      hide_4c44c2f.classList.toggle("show");
-                    };
-                    
-                    btn_4c44c2f.addEventListener("click", toggleSnippet_4c44c2f);
-                  </script>
-                  <style>
-                    [data-id="snippet_4c44c2f"].snippet {}
-                    [data-id="snippet_4c44c2f"] .snippet__head {
-                      background-color: #fff;
-                      border: 1px solid #000;
-                      color: #000;
-                      padding: 5px; 
-                      margin: 5px; 
-                    }
-                    [data-id="snippet_4c44c2f"] .snippet__head button span {
-                      display: none;
-                    }
-                    [data-id="snippet_4c44c2f"] .snippet__head button span.show {
-                      display: inline-block;
-                    }
-                    [data-id="snippet_4c44c2f"] .snippet__body {
-                      background-color: #000;
-                      color: #fff;
-                      padding: 5px; 
-                      margin: 5px; 
-                    }
-                    [data-id="snippet_4c44c2f"] .snippet__body.hidden {
-                      display: none;
-                    }
-                    [data-id="snippet_4c44c2f"] pre {}
-                    [data-id="snippet_4c44c2f"] .string { color: green; }
-                    [data-id="snippet_4c44c2f"] .number { color: darkorange; }
-                    [data-id="snippet_4c44c2f"] .boolean { color: blue; }
-                    [data-id="snippet_4c44c2f"] .null { color: magenta; }
-                    [data-id="snippet_4c44c2f"] .key { color: red; }
-                  </style>
-                </div>
-              
-    
-    <br>
-    <br>
+        <br>
+
+        <div class="snippet" data-id="snippet_2d75445">
+            <div class="snippet__head">
+                dump snippet
+                <button data-hide>
+                    <span data-open class="show">hide</span>
+                    <span data-hide class="">open</span>
+                </button>
+            </div>
+            <div class="snippet__body" data-body>
+                <pre>
+                    Gulp and Twig
+                </pre>
+            </div>
+            <script>
+                const snippet_2d75445 = document.querySelector('[data-id="snippet_2d75445"]');
+                const btn_2d75445 = snippet_2d75445.querySelector("[data-hide]");
+                const open_2d75445 = btn_2d75445.querySelector("[data-open]");
+                const hide_2d75445 = btn_2d75445.querySelector("[data-hide]");
+                const body_2d75445 = snippet_2d75445.querySelector("[data-body]");
+
+                const toggleSnippet_2d75445 = () => {
+                    body_2d75445.classList.toggle("hidden");
+                    open_2d75445.classList.toggle("show");
+                    hide_2d75445.classList.toggle("show");
+                };
+
+                btn_2d75445.addEventListener("click", toggleSnippet_2d75445);
+            </script>
+            <style>
+                [data-id="snippet_2d75445"].snippet {}
+
+                [data-id="snippet_2d75445"] .snippet__head {
+                    background-color: #fff;
+                    border: 1px solid #000;
+                    color: #000;
+                    padding: 5px;
+                    margin: 5px;
+                }
+
+                [data-id="snippet_2d75445"] .snippet__head button span {
+                    display: none;
+                }
+
+                [data-id="snippet_2d75445"] .snippet__head button span.show {
+                    display: inline-block;
+                }
+
+                [data-id="snippet_2d75445"] .snippet__body {
+                    background-color: #000;
+                    color: #fff;
+                    padding: 5px;
+                    margin: 5px;
+                }
+
+                [data-id="snippet_2d75445"] .snippet__body.hidden {
+                    display: none;
+                }
+
+                [data-id="snippet_2d75445"] pre {}
+
+                [data-id="snippet_2d75445"] .string {
+                    color: green;
+                }
+
+                [data-id="snippet_2d75445"] .number {
+                    color: darkorange;
+                }
+
+                [data-id="snippet_2d75445"] .boolean {
+                    color: blue;
+                }
+
+                [data-id="snippet_2d75445"] .null {
+                    color: magenta;
+                }
+
+                [data-id="snippet_2d75445"] .key {
+                    color: red;
+                }
+            </style>
+        </div>
 
 
-    <ul>
-      <li>
-        <a href="/home.html">Главная страница</a>
-      </li>
-      <li>
-        <a href="/404.html">404</a>
-      </li>
-      <li>
-        <a href="/components.html">Компоненты UI-KIT</a>
-      </li>
-      <li>
-        <a href="/svgsprite-demo.html">SVG sprite</a>
-      </li>
-      <li>
-        <a href="/grid-system.html">Сетка</a>
-      </li>
-    </ul>
-  </div>
+        <br>
+        <br>
+
+
+        <ul>
+            <li>
+                <a href="/home.html">Главная страница</a>
+            </li>
+            <li>
+                <a href="/404.html">404</a>
+            </li>
+            <li>
+                <a href="/components.html">Компоненты UI-KIT</a>
+            </li>
+            <li>
+                <a href="/svgsprite-demo.html">SVG sprite</a>
+            </li>
+            <li>
+                <a href="/grid-system.html">Сетка</a>
+            </li>
+        </ul>
+    </div>
 </body>
 
 </html>

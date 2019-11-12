@@ -18,158 +18,192 @@
     Если задана переменная отступов, отступы добавляются через: <b>padding-left, padding-right</b>
     </p>
     <div class="grid-example-row">
-        <div class="col-1-12">
+        <div class="grid-item col-1-12">
             <div class="grid-example-inner">column(1,12)</div>
         </div>
-        <div class="col-1-12">
+        <div class="grid-item col-1-12">
             <div class="grid-example-inner">column(1,12)</div>
         </div>
-        <div class="col-1-12">
+        <div class="grid-item col-1-12">
             <div class="grid-example-inner">column(1,12)</div>
         </div>
-        <div class="col-1-12">
+        <div class="grid-item col-1-12">
             <div class="grid-example-inner">column(1,12)</div>
         </div>
-        <div class="col-1-12">
+        <div class="grid-item col-1-12">
             <div class="grid-example-inner">column(1,12)</div>
         </div>
-        <div class="col-1-12">
+        <div class="grid-item col-1-12">
             <div class="grid-example-inner">column(1,12)</div>
         </div>
-        <div class="col-1-12">
+        <div class="grid-item col-1-12">
             <div class="grid-example-inner">column(1,12)</div>
         </div>
-        <div class="col-1-12">
+        <div class="grid-item col-1-12">
             <div class="grid-example-inner">column(1,12)</div>
         </div>
-        <div class="col-1-12">
+        <div class="grid-item col-1-12">
             <div class="grid-example-inner">column(1,12)</div>
         </div>
-        <div class="col-1-12">
+        <div class="grid-item col-1-12">
             <div class="grid-example-inner">column(1,12)</div>
         </div>
-        <div class="col-1-12">
+        <div class="grid-item col-1-12">
             <div class="grid-example-inner">column(1,12)</div>
         </div>
-        <div class="col-1-12">
+        <div class="grid-item col-1-12">
             <div class="grid-example-inner">column(1,12)</div>
         </div>
     </div>
 
     <div class="grid-example-row">
-        <div class="col-2-12">
+        <div class="grid-item col-2-12">
             <div class="grid-example-inner">column(2,12)</div>
         </div>
-        <div class="col-2-12">
+        <div class="grid-item col-2-12">
             <div class="grid-example-inner">column(2,12)</div>
         </div>
-        <div class="col-2-12">
+        <div class="grid-item col-2-12">
             <div class="grid-example-inner">column(2,12)</div>
         </div>
-        <div class="col-2-12">
+        <div class="grid-item col-2-12">
             <div class="grid-example-inner">column(2,12)</div>
         </div>
-        <div class="col-2-12">
+        <div class="grid-item col-2-12">
             <div class="grid-example-inner">column(2,12)</div>
         </div>
-        <div class="col-2-12">
+        <div class="grid-item col-2-12">
             <div class="grid-example-inner">column(2,12)</div>
         </div>
     </div>
 
     <div class="grid-example-row">
-        <div class="col-3-12">
+        <div class="grid-item col-3-12">
             <div class="grid-example-inner">column(3,12)</div>
         </div>
-        <div class="col-3-12">
+        <div class="grid-item col-3-12">
             <div class="grid-example-inner">column(3,12)</div>
         </div>
-        <div class="col-3-12">
+        <div class="grid-item col-3-12">
             <div class="grid-example-inner">column(3,12)</div>
         </div>
-        <div class="col-3-12">
+        <div class="grid-item col-3-12">
             <div class="grid-example-inner">column(3,12)</div>
         </div>
     </div>
 
     <div class="grid-example-row">
-        <div class="col-4-12">
+        <div class="grid-item col-4-12">
             <div class="grid-example-inner">column(4,12)</div>
         </div>
-        <div class="col-4-12">
+        <div class="grid-item col-4-12">
             <div class="grid-example-inner">column(4,12)</div>
         </div>
-        <div class="col-4-12">
+        <div class="grid-item col-4-12">
             <div class="grid-example-inner">column(4,12)</div>
         </div>
     </div>
 
     <div class="grid-example-row">
-        <div class="col-5-12">
+        <div class="grid-item col-5-12">
             <div class="grid-example-inner">column(5,12)</div>
         </div>
-        <div class="col-5-12">
+        <div class="grid-item col-5-12">
             <div class="grid-example-inner">column(5,12)</div>
         </div>
     </div>
 
     <div class="grid-example-row">
-        <div class="col-6-12">
+        <div class="grid-item col-6-12">
             <div class="grid-example-inner">column(6,12)</div>
         </div>
-        <div class="col-6-12">
+        <div class="grid-item col-6-12">
             <div class="grid-example-inner">column(6,12)</div>
         </div>
     </div>
 
     <div class="grid-example-row">
-        <div class="col-4-12 push-col-2">
+        <div class="grid-item col-4-12 push-grid-item col-2">
             <div class="grid-example-inner">column(4,12) + push(2,12)</div>
         </div>
-        <div class="col-4-12 post-col-2">
+        <div class="grid-item col-4-12 post-grid-item col-2">
             <div class="grid-example-inner">column(4,12) + post(2,12)</div>
         </div>
     </div>
 
     <h2>Колонки внутри колонок</h2>
     <p>
-        Для рассчёта правильной ширины колонки внутри другой, <b>@include column(1, 12);</b> второй аргумент указываем размер текущей  колонки - <i>{сколько колонок}</i>, <i>{размер родительской}</i>
+        Для рассчёта правильной ширины колонки внутри другой и <b>Чтобы границы колонок совпадали с колонками</b><br>
+        <b>Например:</b>
+        <b>@include column(11, 12);</b> второй аргумент указываем размер текущей  колонки - <i>{сколько колонок}</i>, <i>{размер родительской}</i><br>
+        <b>@include column(5, 11);</b> - 5 колонок от 11 <b>@include column(6, 11);</b> - 6 колонок от 11<br>
+        Тогда следующий ряд, например <b>@include column(3, 12);</b> - 3 колоноки от 12 по границам колонок совдадёт с предыдущим.
     </p>
     <div class="grid-example-row">
-        <div class="col-1-12">
+        <div class="grid-item col-1-12">
             <div class="grid-example-inner">column(1,12)</div>
         </div>
-        <div class="col-11-12">
+        <div class="grid-item col-11-12">
             <div class="grid-example-row">
-                <div class="col-5-11">
+                <div class="grid-item col-5-11">
                     <div class="grid-example-inner">column(5,11)</div>
                 </div>
-                <div class="col-6-11">
+                <div class="grid-item col-6-11">
                     <div class="grid-example-inner">column(6,11)</div>
                 </div>
-                <div class="col-5-11">
+                <div class="grid-item col-5-11">
                     <div class="grid-example-inner">column(5,11)</div>
                 </div>
-                <div class="col-3-11">
+                <div class="grid-item col-3-11">
                     <div class="grid-example-inner">column(3,11)</div>
                 </div>
-                <div class="col-3-11">
+                <div class="grid-item col-3-11">
+                    <div class="grid-example-inner">column(3,11)</div>
+                </div>
+                <div class="grid-item col-3-11">
+                    <div class="grid-example-inner">column(3,11)</div>
+                </div>
+                <div class="grid-item col-5-11">
+                    <div class="grid-example-inner">column(5,11)</div>
+                </div>
+                <div class="grid-item col-3-11">
                     <div class="grid-example-inner">column(3,11)</div>
                 </div>
             </div>
         </div>
     </div>
     <div class="grid-example-row">
-        <div class="col-3-12">
+        <div class="grid-item col-3-12">
             <div class="grid-example-inner">column(3,12)</div>
         </div>
-        <div class="col-3-12">
+        <div class="grid-item col-3-12">
             <div class="grid-example-inner">column(3,12)</div>
         </div>
-        <div class="col-3-12">
+        <div class="grid-item col-3-12">
             <div class="grid-example-inner">column(3,12)</div>
         </div>
-        <div class="col-3-12">
+        <div class="grid-item col-3-12">
+            <div class="grid-example-inner">column(3,12)</div>
+        </div>
+    </div>
+    <div class="grid-example-row">
+        <div class="grid-item col-3-12">
+            <div class="grid-example-inner">column(3,12)</div>
+        </div>
+        <div class="grid-item col-3-12">
+            <div class="grid-example-row">
+                <div class="grid-item col-1-2">
+                    <div class="grid-example-inner">column(1,2)</div>
+                </div>
+                <div class="grid-item col-1-2">
+                    <div class="grid-example-inner">column(1,2)</div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item col-3-12">
+            <div class="grid-example-inner">column(3,12)</div>
+        </div>
+        <div class="grid-item col-3-12">
             <div class="grid-example-inner">column(3,12)</div>
         </div>
     </div>

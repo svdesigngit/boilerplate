@@ -5,7 +5,6 @@
 .grid-example-row {
   @include row();
   overflow: hidden;
-  margin-bottom: rhythm(4);
 }
 
 // 12 колонок
@@ -49,6 +48,10 @@
   @include column(3, 11);
 }
 
+.col-1-2 {
+  @include column(1, 2);
+}
+
 .push-col-2 {
   @include push(2,12);
 }
@@ -62,8 +65,13 @@
 
   border: 1px solid $gray;
   color:  $gray-darken;
-  height: 50px;
+  height: 100%;
+  min-height: 50px;
   padding: rhythm(2);
   display: flex;
   font-weight: $font-bold;
+}
+
+.grid-item {
+  padding-bottom: rhythm(4);
 }
