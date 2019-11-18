@@ -61,5 +61,8 @@ typings/
 # dist files
 dist
 
-#storm
+# Storm
 .idea
+
+# Misc
+.DS_Store
