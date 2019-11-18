@@ -63,15 +63,26 @@
 .grid-example-inner {
   @include font-size('small');
 
-  border: 1px solid $gray;
-  color:  $gray-darken;
+  position: relative;
+  display: flex;
   height: 100%;
   min-height: 50px;
   padding: rhythm(2);
-  display: flex;
   font-weight: $font-bold;
+  color:  $gray-darken;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    border: 1px solid $gray;
+  }
 }
 
 .grid-item {
-  padding-bottom: rhythm(4);
+  //padding-bottom: rhythm(4);
 }
