@@ -52,6 +52,9 @@
     "postcss-object-fit-images": "^1.1.2",
     "prettier": "^1.18.0",
     "svg-sprite": "^1.5.0",
+    "vue": "^2.6.10",
+    "vue-loader": "^15.7.2",
+    "vue-template-compiler": "^2.6.10",
     "webpack": "^4.33.0",
     "webpack-stream": "^5.2.1"
   },
