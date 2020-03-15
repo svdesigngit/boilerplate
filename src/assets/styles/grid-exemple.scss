@@ -53,11 +53,13 @@
 }
 
 .push-col-2 {
-  @include push(2,12);
+  @include push(2, 12);
 }
 
 .post-col-2 {
-  @include post(2,12);
+  @include post(2, 12);
+
+  margin-left: column(2, 12);
 }
 
 .grid-example-inner {

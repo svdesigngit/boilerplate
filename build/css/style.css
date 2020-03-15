@@ -914,6 +914,7 @@ summary {
 
 .post-col-2 {
   margin-right: 16.66667%;
+  margin-left: 16.66667%;
 }
 
 .grid-example-inner {
@@ -2295,6 +2296,248 @@ button.swiper-pagination-bullet {
   z-index: 0;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+}
+
+.accordion {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.accordion__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  -ms-flex-preferred-size: 200%;
+      flex-basis: 200%;
+  max-width: 200%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+}
+
+.accordion__list li {
+  margin: 0;
+  padding: 0;
+  background: none;
+}
+
+.accordion__list li:before, .accordion__list li:after {
+  content: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .accordion__list {
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .accordion__list {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .accordion__list {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .accordion__list {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .accordion__list {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  .accordion__list {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.accordion__item:nth-child(2n) {
+  background-color: #ebebeb;
+}
+
+.accordion__header {
+  -webkit-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.3s;
+       -o-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+       -o-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  position: relative;
+  padding: 20px;
+}
+
+.accordion__header:hover {
+  background-color: rgba(240, 196, 68, 0.5);
+  cursor: pointer;
+}
+
+.accordion__header:hover h3 {
+  color: #ebebeb;
+  font-weight: bold;
+}
+
+.accordion__header:hover .accordion__btn {
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  -o-transition-property: transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.2s;
+       -o-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-out;
+       -o-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.accordion__header h3 {
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .accordion__header h3 {
+    font-size: 1.6rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .accordion__header h3 {
+    font-size: 1.6rem;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .accordion__header h3 {
+    font-size: 1.8rem;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .accordion__header h3 {
+    font-size: 1.8rem;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .accordion__header h3 {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  .accordion__header h3 {
+    font-size: 3rem;
+  }
+}
+
+.accordion__btn {
+  border: none;
+  background: none;
+  outline: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 20px;
+  height: 20px;
+  width: 20px;
+  margin: auto;
+}
+
+.accordion__btn:focus {
+  outline: none;
+}
+
+.accordion__btn:before, .accordion__btn:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: block;
+  background: #585858;
+  margin: auto;
+}
+
+.accordion__btn:before {
+  width: 20px;
+  height: 2px;
+}
+
+.accordion__btn:after {
+  width: 2px;
+  height: 20px;
+}
+
+.accordion__body {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  pointer-events: none;
+  -webkit-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.2s;
+       -o-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-out;
+       -o-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+}
+
+.accordion__item_active > .accordion__header {
+  background-color: rgba(240, 196, 68, 0.5);
+}
+
+.accordion__item_active > .accordion__header .accordion__btn {
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  -o-transition-property: transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.2s;
+       -o-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-out;
+       -o-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.accordion__item_active > .accordion__body {
+  visibility: visible;
+  opacity: 1;
+  height: auto;
+  pointer-events: auto;
 }
 
 /*# sourceMappingURL=app.css.map */

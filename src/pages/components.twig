@@ -6,33 +6,36 @@
 
 {% block body %}
 
-{#    <h2>Лого</h2>#}
-{#    {% include '../components/logo/logo.twig' %}#}
+    {#<h2>Лого</h2>#}
+    {#{% include '../components/logo/logo.twig' %}#}
 
-{#    <h2>Кнопки</h2>#}
-{#    {% include '../components/buttons/button.twig' with {#}
-{#        text: 'Забронировать кнопка',#}
-{#        modify: 'btn--default',#}
-{#        data_attr: 'data-action="popup"',#}
-{#        disabled: true,#}
-{#    }%}#}
+    {#<h2>Кнопки</h2>#}
+    {#{% include '../components/buttons/button.twig' with {#}
+        {#text: 'Забронировать кнопка',#}
+        {#modify: 'btn--default',#}
+        {#data_attr: 'data-action="popup"',#}
+        {#disabled: true,#}
+    {#}%}#}
 
-{#    {% include '../components/buttons/button.twig' with {#}
-{#        text: 'Забронировать ссылка',#}
-{#        modify: 'btn--default',#}
-{#        data_attr: 'data-action="popup"',#}
-{#        tag: 'a',#}
-{#        href: '#',#}
-{#        active: true#}
-{#    }%}#}
+    {#{% include '../components/buttons/button.twig' with {#}
+        {#text: 'Забронировать ссылка',#}
+        {#modify: 'btn--default',#}
+        {#data_attr: 'data-action="popup"',#}
+        {#tag: 'a',#}
+        {#href: '#',#}
+        {#active: true#}
+    {#}%}#}
 
-{#    {% include '../components/buttons/button.twig' with {#}
-{#        text: 'Забронировать input',#}
-{#        modify: 'btn--default',#}
-{#        data_attr: 'data-action="popup"',#}
-{#        disabled: true,#}
-{#        tag: 'input'#}
-{#    }%}#}
+    {#{% include '../components/buttons/button.twig' with {#}
+        {#text: 'Забронировать input',#}
+        {#modify: 'btn--default',#}
+        {#data_attr: 'data-action="popup"',#}
+        {#disabled: true,#}
+        {#tag: 'input'#}
+    {#}%}#}
+
+    <h2>Аккордион - классический</h2>
+    {% include '../components/accordion/accordion.twig' %}
 
 {% endblock %}
 
@@ -41,7 +44,6 @@
 {% block footer %}
 
 {% endblock %}
-
 
 
 {% block script %}
