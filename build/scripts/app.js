@@ -194,28 +194,69 @@ class Accordion {
 
       if (!btn) {
         return;
-      } // Закрываем другие акардеоны если нужно
-
-
-      if (this.defaultOptions.closeOthers) {
-        this.closeOthers(item);
       } // Получаем контент
 
 
       const body = item.querySelector(`[data-${this.defaultOptions.selectorBodyData}='${btn.dataset[this.defaultOptions.selectorBtnData]}']`); // Получаем родителя
 
-      const parent = event.target.closest(`[data-${this.defaultOptions.selectorParentData}]`); // Переключаем классыы
+      const parent = event.target.closest(`[data-${this.defaultOptions.selectorParentData}]`);
+      const isActive = btn.classList.contains(this.defaultOptions.activeClassBtn);
 
-      this.activeToggler(btn, this.defaultOptions.activeClassBtn);
+      if (isActive) {
+        // Закрываем аккардеон
+        this.close(btn, this.defaultOptions.activeClassBtn);
 
-      if (parent) {
-        this.activeToggler(parent, this.defaultOptions.activeClassParent);
-      }
+        if (parent) {
+          this.close(parent, this.defaultOptions.activeClassParent);
+        }
 
-      if (body) {
-        this.activeToggler(body, this.defaultOptions.activeClassBody);
+        if (body) {
+          this.close(body, this.defaultOptions.activeClassBody);
+        }
+      } else {
+        // Закрываем другие аккардеоны если нужно
+        if (this.defaultOptions.closeOthers) {
+          this.closeOthers(parent);
+        } // Открываем аккардеон
+
+
+        this.open(btn, this.defaultOptions.activeClassBtn);
+
+        if (parent) {
+          this.open(parent, this.defaultOptions.activeClassParent);
+        }
+
+        if (body) {
+          this.open(body, this.defaultOptions.activeClassBody);
+        }
       }
     });
+  }
+
+  nextItems(element, elementsList = []) {
+    const nextElement = element.nextElementSibling;
+
+    if (nextElement) {
+      elementsList.push(nextElement);
+      this.nextItems(nextElement, elementsList);
+    }
+
+    return elementsList;
+  }
+
+  prevItems(element, elementsList = []) {
+    const prevElement = element.previousElementSibling;
+
+    if (prevElement) {
+      elementsList.push(prevElement);
+      this.prevItems(prevElement, elementsList);
+    }
+
+    return elementsList;
+  }
+
+  nighboursItems(element) {
+    return [...this.prevItems(element), ...this.nextItems(element)];
   }
   /**
    * Переключает класс элемента аккардиона
@@ -224,8 +265,18 @@ class Accordion {
    */
 
 
-  activeToggler(element, elementClass) {
-    element.classList.toggle(elementClass);
+  open(element, elementClass) {
+    element.classList.add(elementClass);
+  }
+  /**
+   * Переключает класс элемента аккардиона
+   * @param {object} element - текущий элемент
+   * @param {object} elementClass -  перключаемый класс
+   */
+
+
+  close(element, elementClass) {
+    element.classList.remove(elementClass);
   }
   /**
    * Применяет пользовательские опции
@@ -269,20 +320,23 @@ class Accordion {
 
 
   closeOthers(item) {
-    if (this.defaultOptions.closeOthers === true) {
-      const itemActivies = item.querySelectorAll(`
-        .${this.defaultOptions.activeClassParent},
-        .${this.defaultOptions.activeClassBtn},
-        .${this.defaultOptions.activeClassBody}`); // console.log(itemActivies);
-      //
+    const nightboursList = this.nighboursItems(item);
+    console.log(nightboursList); // if (this.defaultOptions.closeOthers === true) {
+    //   const itemActivies = item.querySelectorAll(`
+    //     .${this.defaultOptions.activeClassParent},
+    //     .${this.defaultOptions.activeClassBtn},
+    //     .${this.defaultOptions.activeClassBody}`);
+    // console.log(itemActivies);
+    //
 
-      if (itemActivies.length) {// itemActivies.forEach(el => {
-        //   el.classList.remove(`${this.defaultOptions.activeClassParent}`);
-        //   el.classList.remove(`${this.defaultOptions.activeClassBtn}`);
-        //   el.classList.remove(`${this.defaultOptions.activeClassBody}`);
-        // });
-      }
-    }
+    if (nightboursList.length) {
+      nightboursList.forEach(el => {
+        el.classList.remove(`${this.defaultOptions.activeClassParent}`);
+        el.classList.remove(`${this.defaultOptions.activeClassBtn}`);
+        el.classList.remove(`${this.defaultOptions.activeClassBody}`);
+      });
+    } // }
+
   }
 
 }
