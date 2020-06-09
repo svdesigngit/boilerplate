@@ -17,12 +17,12 @@
 // Шрифты
 @import "./fonts";
 
+// Default tags
+@import "./global-tags";
+
 // Grid
 @import './grid';
 @import './grid-exemple';
-
-// Default tags
-@import "./global-tags";
 
 // Libs
 @import './libs/swiper.min.scss';

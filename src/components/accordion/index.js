@@ -1,4 +1,5 @@
 class Accordion {
+
   constructor() {
     // Опции по умолчанию
     this.defaultOptions = {

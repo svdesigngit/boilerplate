@@ -68,10 +68,12 @@
 
 // clearfix на случай float
 @mixin clearfix {
-  &:before, &:after {
+  &:before,
+  &:after {
     content: " ";
     display: table;
   }
+
   &:after {
     clear: both;
   }

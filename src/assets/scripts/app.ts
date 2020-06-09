@@ -7,6 +7,7 @@ numberFormater();
  * Аккордион
  */
 const accordion = new Accordion();
+
 accordion.init({
   selector: '.j-accordion',
   selectorParentData: 'data-item',
