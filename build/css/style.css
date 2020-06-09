@@ -415,7 +415,6 @@ body {
  *
  * Customize the background color to match your design.
  */
-::-moz-selection,
 ::-moz-selection {
   background-color: rgba(252, 114, 121, 0.9);
   text-shadow: none;
@@ -943,17 +942,7 @@ textarea {
   overflow: hidden;
 }
 
-input::-moz-placeholder,
-input[placeholder],
-input::-moz-placeholder,
-input:-moz-placeholder,
-input:-ms-input-placeholder,
-input::-webkit-input-placeholder,
-textarea[placeholder],
-textarea::-moz-placeholder,
-textarea:-moz-placeholder,
-textarea:-ms-input-placeholder,
-textarea::-webkit-input-placeholder {
+input::-moz-placeholder {
   font-size: 1.6rem;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -980,17 +969,7 @@ textarea::-webkit-input-placeholder {
 }
 
 @media only screen and (min-width: 768px) {
-  input::-moz-placeholder,
-  input[placeholder],
-  input::-moz-placeholder,
-  input:-moz-placeholder,
-  input:-ms-input-placeholder,
-  input::-webkit-input-placeholder,
-  textarea[placeholder],
-  textarea::-moz-placeholder,
-  textarea:-moz-placeholder,
-  textarea:-ms-input-placeholder,
-  textarea::-webkit-input-placeholder {
+  input::-moz-placeholder {
     font-size: 1.6rem;
   }
   input::placeholder,
@@ -1009,17 +988,7 @@ textarea::-webkit-input-placeholder {
 }
 
 @media only screen and (min-width: 1024px) {
-  input::-moz-placeholder,
-  input[placeholder],
-  input::-moz-placeholder,
-  input:-moz-placeholder,
-  input:-ms-input-placeholder,
-  input::-webkit-input-placeholder,
-  textarea[placeholder],
-  textarea::-moz-placeholder,
-  textarea:-moz-placeholder,
-  textarea:-ms-input-placeholder,
-  textarea::-webkit-input-placeholder {
+  input::-moz-placeholder {
     font-size: 1.6rem;
   }
   input::placeholder,
@@ -1038,17 +1007,7 @@ textarea::-webkit-input-placeholder {
 }
 
 @media only screen and (min-width: 1280px) {
-  input::-moz-placeholder,
-  input[placeholder],
-  input::-moz-placeholder,
-  input:-moz-placeholder,
-  input:-ms-input-placeholder,
-  input::-webkit-input-placeholder,
-  textarea[placeholder],
-  textarea::-moz-placeholder,
-  textarea:-moz-placeholder,
-  textarea:-ms-input-placeholder,
-  textarea::-webkit-input-placeholder {
+  input::-moz-placeholder {
     font-size: 1.8rem;
   }
   input::placeholder,
@@ -1067,17 +1026,7 @@ textarea::-webkit-input-placeholder {
 }
 
 @media only screen and (min-width: 1440px) {
-  input::-moz-placeholder,
-  input[placeholder],
-  input::-moz-placeholder,
-  input:-moz-placeholder,
-  input:-ms-input-placeholder,
-  input::-webkit-input-placeholder,
-  textarea[placeholder],
-  textarea::-moz-placeholder,
-  textarea:-moz-placeholder,
-  textarea:-ms-input-placeholder,
-  textarea::-webkit-input-placeholder {
+  input::-moz-placeholder {
     font-size: 1.8rem;
   }
   input::placeholder,
@@ -1096,17 +1045,7 @@ textarea::-webkit-input-placeholder {
 }
 
 @media only screen and (min-width: 1920px) {
-  input::-moz-placeholder,
-  input[placeholder],
-  input::-moz-placeholder,
-  input:-moz-placeholder,
-  input:-ms-input-placeholder,
-  input::-webkit-input-placeholder,
-  textarea[placeholder],
-  textarea::-moz-placeholder,
-  textarea:-moz-placeholder,
-  textarea:-ms-input-placeholder,
-  textarea::-webkit-input-placeholder {
+  input::-moz-placeholder {
     font-size: 2rem;
   }
   input::placeholder,
@@ -1125,17 +1064,7 @@ textarea::-webkit-input-placeholder {
 }
 
 @media only screen and (min-width: 2560px) {
-  input::-moz-placeholder,
-  input[placeholder],
-  input::-moz-placeholder,
-  input:-moz-placeholder,
-  input:-ms-input-placeholder,
-  input::-webkit-input-placeholder,
-  textarea[placeholder],
-  textarea::-moz-placeholder,
-  textarea:-moz-placeholder,
-  textarea:-ms-input-placeholder,
-  textarea::-webkit-input-placeholder {
+  input::-moz-placeholder {
     font-size: 3rem;
   }
   input::placeholder,
